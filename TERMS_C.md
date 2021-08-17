@@ -1,8 +1,5 @@
 Hola, 
 
-
-¡ATENCIÓN!¡ESTA WEB NO COMERCIALIZA PRODUCTOS!¡ES FICTICIA CON FINES EDUCATIVOS!
-
 En el marco del programa de Ceibal "Jovenes a Programar, Álvaro Lamé" edición 2021 en Uruguay.
 Luego de atravezada la fase 1 y al ser convocado para ser parte de la fase 2. Se desarrolla este proyecto.
 
@@ -18,8 +15,6 @@ Julián Terra Ordiozola
 
 -----------------------------------------------------------------------------------------------------------------------------
 Hello,
-
-ATTENTION! THIS WEBSITE DOES NOT COMMERCIALIZE PRODUCTS!¡ IT IS FICTICE FOR EDUCATIONAL PURPOSES!
 
 Within the framework of the Ceibal program "Jovenes a Programar, Álvaro Lamé" 2021 edition in Uruguay.
 After going through phase 1 and being summoned to be part of phase 2. This project is developed.

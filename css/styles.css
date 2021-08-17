@@ -141,7 +141,25 @@ a.custom-card:hover {
 }
 
 .text-center {
-  color: orange;
+  color: rgb(0, 0, 0);
 }
+
+
+
+/*VOY A CAMBIARLE EL COLOR A LOS BOTONES CON DIFERENTES IDS DE LA FAMILIA  LOGIN */
+
+
+.warnings {
+width:200px;
+text-align: center;
+margin:auto;
+color:black;
+padding-top: 20px;
+
+}
+
+  
+
+
 /*CAMBIA EL COLOR DE LOS TEXTOS EN EL CENTRO*/
 

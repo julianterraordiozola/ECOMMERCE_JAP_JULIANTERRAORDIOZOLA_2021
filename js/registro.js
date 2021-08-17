@@ -8,9 +8,12 @@ const usuario = document.getElementById("userName")
 const password = document.getElementById("emailRegistro")
 const password = document.getElementById("passwordRegistro")
 const warnigns = document.getElementById("confirmPassRegistro")
+const registro = document.getElementById("confirmPassRegistro")
 
 form-control.addEventListener("submit"), e=>{ 
-if(passwordRegistro.value = confirmPassRegistro.value);
+e.preventdefault()
+let 
+    if(passwordRegistro.value = confirmPassRegistro.value);
 alert("Creación de cuenta exitosa!Dirijase a su mail para verificar la cuenta")
 }
 

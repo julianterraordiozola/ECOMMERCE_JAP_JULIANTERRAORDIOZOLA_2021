@@ -143,7 +143,7 @@ a.custom-card:hover {
 .text-center {
   color: rgb(0, 0, 0);
 }
-
+ 
 
 
 /*VOY A CAMBIARLE EL COLOR A LOS BOTONES CON DIFERENTES IDS DE LA FAMILIA  LOGIN */
@@ -158,7 +158,26 @@ padding-top: 20px;
 
 }
 
-  
+.imagenFondoE {
+    background-image: url("../img/email.jpg");
+    background-size: cover;
+    height: 100vh;
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+   }
+
+.textoLink {
+  position: absolute;  
+  text-align: center; 
+  right: 0;  
+  width: 100px;  
+  height: 100px;
+  padding-right: 300px; 
+   
+}
+
 
 
 /*CAMBIA EL COLOR DE LOS TEXTOS EN EL CENTRO*/

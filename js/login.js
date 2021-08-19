@@ -6,13 +6,25 @@
 
 const email = document.getElementById("inputEmail")
 const password = document.getElementById("inputPassword")
-const password = document.getElementById("inputPassword")
 const warnigns = document.getElementById("warnings")
 
-form-control.addEventListener("submit"), e=>{ 
-if(email.value.length<15)
-alert("Nombre muy corto")
+
+
+
+function validar(){
+   var inputEmail=document.getElementById("inputEmail").value;
+     var inputPassword=document.getElementById("inputPassword").value;
+   
+   if(inputEmail=="admin@jap" && inputPassword=="admin")
+   {
+    alert("¡Login realizado con éxito!");
+    window.open("index.html");
+  }
+else {
+    alert("¡No se pudo realizar el Login!");
+    window.open("login.html");
+}
 }
 
 
- //hacer un evento que cuando de click al boton login pase algo//
+

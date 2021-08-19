@@ -50,11 +50,11 @@
         <h1 class="h3 mb-3 font-weight-normal">Registrá tu cuenta</h1>
         <label for="inputEmail" class="sr-only">Nombre de usuario</label>
         <input type="user" id="userName" class="form-control" placeholder="Nombre de usuario" required autofocus>
-        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <label for="inputPassword2" class="sr-only">Contraseña</label>
         <input type="email" id="emailRegistro" class="form-control" placeholder="Dirección de correo electronico" required autofocus>
-        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <label for="inputPassword2" class="sr-only">Contraseña</label>
         <input type="password" id="passwordRegistro" class="form-control" placeholder="Contraseña" required autofocus>
-        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <label for="inputPassword2" class="sr-only">Contraseña</label>
         <input type="password" id="confirmPassRegistro" class="form-control" placeholder="Repita la contraseña" required autofocus>
         <div class="checkbox mb-3">
           <label>
@@ -62,8 +62,11 @@
           </label>
           <a href="README.md">he leido los terminos y condiciones</a> 
         </div>
-        <button id="registrarme" class="btn btn-lg btn-primary btn-block" type="submit";">Enviá tu registro</button>
+        <button id="registrarme" class="btn btn-lg btn-primary2 btn-block" type="submit" onclick="validate()" ;>Enviá tu registro</button>
+        <button id="volverAindex" class="btn btn-lg btn-primary btn-block" type="submit"
+              onclick="location.href='login.html';">Volvé a la pagina principal</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+        
       </form>
     </body>
     <!--DESDE EL LINK DE LA PAGINA DE JAP, ENTRAMOS AL TEMPLATE DE LOGIN Y DESDE LA SECCION INSPECCIONAR

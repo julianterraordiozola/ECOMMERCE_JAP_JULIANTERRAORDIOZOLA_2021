@@ -13,7 +13,7 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <script src="js/login.js"></script>
+  <script src="js/registro.js"></script>
   <!-- VOY A LINKEAR EL HTML CON EL JS -->
   
   <style>
@@ -46,7 +46,7 @@
 
     <body class="text-center">
       <form class="form-signin">
-        <img class="mb-4" src="img/cover_back.png" width="1030" height="300">
+        <img class="btn btn-lg btn-primary2 btn-block" src="img/cover_back.png" width="1030" height="300">
         <h1 class="h3 mb-3 font-weight-normal">Registrá tu cuenta</h1>
         <label for="inputEmail" class="sr-only">Nombre de usuario</label>
         <input type="user" id="userName" class="form-control" placeholder="Nombre de usuario" required autofocus>
@@ -58,15 +58,15 @@
         <input type="password" id="confirmPassRegistro" class="form-control" placeholder="Repita la contraseña" required autofocus>
         <div class="checkbox mb-3">
           <label>
-            <input type="checkbox" value="remember-me"> Estoy de acuerdo, 
-          </label>
+            <input id="estoy_de_acuerdo" type="checkbox" required > Estoy de acuerdo, 
+          
           <a href="README.md">he leido los terminos y condiciones</a> 
         </div>
-        <button id="registrarme" class="btn btn-lg btn-primary2 btn-block" type="submit" onclick="validate()" ;>Enviá tu registro</button>
+        <button id="botonRegistro" class="btn btn-lg btn-primary2 btn-block" type="submit" onclick="crearRegistro()">Registrá tu cuenta</button>
         <button id="volverAindex" class="btn btn-lg btn-primary btn-block" type="submit"
-              onclick="location.href='login.html';">Volvé a la pagina principal</button>
+              onclick="location.href='index.html';">Volvé a la pagina principal</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
-        
+      </label>
       </form>
     </body>
     <!--DESDE EL LINK DE LA PAGINA DE JAP, ENTRAMOS AL TEMPLATE DE LOGIN Y DESDE LA SECCION INSPECCIONAR

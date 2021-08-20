@@ -158,15 +158,6 @@ padding-top: 20px;
 
 }
 
-.imagenFondoE {
-    background-image: url("../img/email.jpg");
-    background-size: cover;
-    height: 100vh;
-  width: 80%;
-  background-color: rgba(0, 0, 0, 0.3);
-  text-align: center;
-  position: relative;
-   }
 
 .textoLink {
   position: absolute;  

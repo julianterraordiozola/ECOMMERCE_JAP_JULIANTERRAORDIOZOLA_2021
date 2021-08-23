@@ -1,10 +1,14 @@
+
 function crearRegistro() {
   var userName = document.getElementById("userName").value;
   var emailRegistro = document.getElementById("emailRegistro").value;
   var passwordRegistro = document.getElementById("passwordRegistro").value;
   var confirmPassRegistro = document.getElementById("confirmPassRegistro").value;
+  
+  
 
-  if (userName !=="" && emailRegistro !== "" && passwordRegistro !=="" && confirmPassRegistro !=="" )
+
+  if (userName !=="" && emailRegistro !=="" && passwordRegistro !=="" && confirmPassRegistro !=="") 
     
   {
     alert("Has creado tu cuenta! ¡Ingresa a tu mail para verificarla!");
@@ -18,10 +22,11 @@ function crearRegistro() {
 
   }*/
 
+
   document.addEventListener("DOMContentLoaded"), function(e){
 
   }
 
 
- //hacer un evento que cuando de click al boton login pase algo//
+  
 

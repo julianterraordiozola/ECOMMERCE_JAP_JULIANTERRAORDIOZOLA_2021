@@ -15,19 +15,24 @@ function showCategoriesList(array) {
     let htmlContentToAppend = " ";
     for (let i = 0; i < array.length; i++) {
         let category = array[i];
-
+        console.log(category);
         htmlContentToAppend += `
-                <div class="row">
-                
-                <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ category.name + `</h4>
-                        
-                        <small class="text-muted"><h3>` + category.currency + category.cost + `</h3>`+ category.soldCount + ` Unidades vendidas</small>
-                    </div>
-                    <p class="descript">`+ category.description + `</p>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img src="` + category.imgSrc + `" alt="` + category.description + `" class="card-img-top">
+                        <div class="card-body">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h4 class="mb-1">`+ category.name + `</h4>
+                                    
+                                <small class="text-muted"><h3>` + category.currency + category.cost + `</h3>`+ category.soldCount + ` Unidades vendidas</small>
+                            </div>
+                         <p class="descript">`+ category.description + `</p>
+                            <p> <a type="button" class="btn btn-sm btn-outline-secondary" href="product-info.html" >🛈</a>
+                             <a type="button"  class="btn btn-sm btn-outline-secondary" href="cart.html">🛒</a>
+                            </p>
+                        </div>
+                    <div>
+                    
                 </div>
             </div>
         </div>

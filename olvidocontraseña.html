@@ -13,7 +13,7 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <script src="js/index.js"></script>
+  <script src="js/olvidocontraseña.js"></script>
   <!-- VOY A LINKEAR EL HTML CON EL JS -->
 
   <style>
@@ -44,25 +44,28 @@
 <body class="text-center">
   <div class="container p-5">
 
-    <body class="text-center">
-      <form class="form-signin">
-        <img class="btn btn-lg btn-primary2 btn-block" src="img/cover_back.png" width="1030" height="300">
-        <h1 class="h3 mb-3 font-weight-normal">Olvidasté tu contraseña</h1>
-        <label for="inputEmail" class="sr-only">Cuenta de correo electrónico</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Cuenta de correo electrónico" required
-          autofocus>
-        <br>
-        <div>
-         <button id="botonOlviContraseña" class="btn btn-lg btn-primary2 btn-block" type="submit"
-              onclick="location.href='index.html';">Obtené el link para recuperar contraseña</button>
-              <button id="volverAindex" class="btn btn-lg btn-primary btn-block" type="submit"
-              onclick="location.href='index.html';">Volvé a la pagina principal</button>
-          </label>
-        </div>
-                <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
-      </form>
-    </body>
-    <!--DESDE EL LINK DE LA PAGINA DE JAP, ENTRAMOS AL TEMPLATE DE LOGIN Y DESDE LA SECCION INSPECCIONAR
-  NOS TRAJIMOS EL CODIGO HTML Y LO INSERTAMOS DENTRO DEL BODY DE LOGIN.HTML  TENEMOS, tengo que ponerle-->
+
+    <form class="form-signin">
+      <img class="btn btn-lg btn-primary2 btn-block" src="img/cover_back.png" width="1030" height="300">
+      <h1 class="h3 mb-3 font-weight-normal">Olvidasté tu contraseña</h1>
+      <label for="inputEmail" class="sr-only">Cuenta de correo electrónico</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Cuenta de correo electrónico" required
+        autofocus>
+      <br>
+      <div>
+        <button id="olvido-Contraseña" class="btn btn-lg btn-primary2 btn-block" type="submit"
+          onclick=olvidoContraseña()">Obtené el link para recuperar contraseña</button>
+
+
+
+
+        <button id="volverAindex" class="btn btn-lg btn-primary btn-block" type="submit"
+          onclick="location.href='index.html';">Volvé a la pagina principal</button>
+
+      </div>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+    </form>
+</body>
+
 
 </html>

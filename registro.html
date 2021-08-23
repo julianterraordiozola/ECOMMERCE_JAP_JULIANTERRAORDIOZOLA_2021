@@ -15,7 +15,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <script src="js/registro.js"></script>
   <!-- VOY A LINKEAR EL HTML CON EL JS -->
-  
+
   <style>
     html,
     body {
@@ -42,34 +42,36 @@
 </head>
 
 <body class="text-center">
-  <div class="container p-5">
 
-    <body class="text-center">
+
+  <body class="text-center">
+    <div class="container p-5">
       <form class="form-signin">
         <img class="btn btn-lg btn-primary2 btn-block" src="img/cover_back.png" width="1030" height="300">
         <h1 class="h3 mb-3 font-weight-normal">Registrá tu cuenta</h1>
-        <label for="inputEmail" class="sr-only">Nombre de usuario</label>
-        <input type="user" id="userName" class="form-control" placeholder="Nombre de usuario" required autofocus>
+        <label for="usuario" class="sr-only">Nombre de usuario</label>
+        <input type="text" id="userName" class="form-control" placeholder="Nombre de usuario" required autofocus>
+        <label for="emailRegistro" class="sr-only">Email registro</label>
+        <input type="email" id="emailRegistro" class="form-control" placeholder="Dirección de correo electronico"
+          required>
         <label for="inputPassword2" class="sr-only">Contraseña</label>
-        <input type="email" id="emailRegistro" class="form-control" placeholder="Dirección de correo electronico" required autofocus>
-        <label for="inputPassword2" class="sr-only">Contraseña</label>
-        <input type="password" id="passwordRegistro" class="form-control" placeholder="Contraseña" required autofocus>
-        <label for="inputPassword2" class="sr-only">Contraseña</label>
-        <input type="password" id="confirmPassRegistro" class="form-control" placeholder="Repita la contraseña" required autofocus>
-        <div class="checkbox mb-3">
-          <label>
-            <input id="estoy_de_acuerdo" type="checkbox" required > Estoy de acuerdo, 
-          
-          <a href="README.md">he leido los terminos y condiciones</a> 
-        </div>
-        <button id="botonRegistro" class="btn btn-lg btn-primary2 btn-block" type="submit" onclick="crearRegistro()">Registrá tu cuenta</button>
-        <button id="volverAindex" class="btn btn-lg btn-primary btn-block" type="submit"
-              onclick="location.href='index.html';">Volvé a la pagina principal</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
-      </label>
-      </form>
-    </body>
-    <!--DESDE EL LINK DE LA PAGINA DE JAP, ENTRAMOS AL TEMPLATE DE LOGIN Y DESDE LA SECCION INSPECCIONAR
-  NOS TRAJIMOS EL CODIGO HTML Y LO INSERTAMOS DENTRO DEL BODY DE LOGIN.HTML  TENEMOS, tengo que ponerle-->
+        <input type="password" id="passwordRegistro" class="form-control" placeholder="Contraseña" required>
+        <label for="inputPassword3" class="sr-only">Repita la Contraseña</label>
+        <input type="password" id="confirmPassRegistro" class="form-control" placeholder="Repita la contraseña"
+          required>
+        <label for="estoydeacuerdo" class="sr-only"></label>
+        <input id="estoyDeAcuerdo" type="checkbox" class="checkbox mb-3" required checked> Estoy de acuerdo,
+        <a href="README.md">he leído los terminos y condiciones</a>
 
+
+        <button id="botonRegistro" class="btn btn-lg btn-primary2 btn-block" type="submit"
+          onclick="crearRegistro()">Registrá tu cuenta</button>
+        <button id="volverAindex" class="btn btn-lg btn-primary btn-block" type="submit"
+          onclick="location.href='index.html';">Volvé a la pagina principal</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+      </form>
+
+    </div>
+  </body>
+  
 </html>

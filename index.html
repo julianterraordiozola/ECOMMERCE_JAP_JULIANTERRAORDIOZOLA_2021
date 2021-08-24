@@ -15,6 +15,11 @@
   <link href="css/styles.css" rel="stylesheet">
   <script src="js/index.js"></script>
   <!-- VOY A LINKEAR EL HTML CON EL JS -->
+  <!-- Google api -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id"
+    content="727244594907-nh6g70m08q00u2fmvv89a5ubol8rodie.apps.googleusercontent.com">
+  <!-- Google api -->
 
   <style>
     html,
@@ -47,7 +52,7 @@
     <body class="text-center">
       <form class="form-signin" action="index.html">
         <img class="btn btn-lg btn-primary2 btn-block" src="img/cover_back.png" width="1030" height="300">
-        <h1 class="h3 mb-3 font-weight-normal">Ingresá a tu cuenta</h1>
+        <h1 class="h3 mb-3 font-weight-normal" class="valid-feedback">Ingresá a tu cuenta</h1>
 
         <input type="email" id="inputEmail" class="form-control"
           placeholder="Dirección de correo electrónico   //  admin@jap" required>
@@ -64,7 +69,20 @@
         <p class="warnings" id="warnings"></p>
         <button id="noTengocuenta" class="btn btn-lg btn-primary btn-block" type="submit"
           onclick="location.href='registro.html';">No tengo una cuenta</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+        <!--Boton de google-->
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <!--Script de google-->
+        <script>
+          function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+          }
+        </script>
+
+                <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
       </form>
 
     </body>
@@ -72,5 +90,3 @@
   NOS TRAJIMOS EL CODIGO HTML Y LO INSERTAMOS DENTRO DEL BODY DE LOGIN.HTML  TENEMOS, tengo que ponerle-->
 
 </html>
-
-

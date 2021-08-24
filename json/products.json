@@ -34,7 +34,7 @@
     {
         "name": "Seat Ibiza",
         "description": "Si quieres algo, ve tras ello. El Ibiza ha sido creado para llevarte tan lejos como quieras.",
-        "cost": 20.950,
+        "cost": 20950,
         "currency": "USD",
         "imgSrc": "img/prod5.jpg",
         "soldCount": 12
@@ -42,7 +42,7 @@
     {
         "name": "Chevrolet joy",
         "description": "Con el Joy tenés todo lo que necesitás para tu día a día: confort, seguridad y economía.",
-        "cost": 12.900,
+        "cost": 12900,
         "currency": "USD",
         "imgSrc": "img/prod6.jpg",
         "soldCount": 67

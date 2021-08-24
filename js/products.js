@@ -1,13 +1,38 @@
-//PASO 1: OBTENER LA INFORMACIÓN Product URL  : Inits.js
-// Paso 2: UTILIZAMOS LA FUNCION FETCH: En init.js
-// paso 3: (orientacion) Ver en category la funcion. 
-//paso 4: Poner URL de productos y ver coomo funciona en alguna consola   = await.
-//paso 5 podemos usar FETCH o GETJASON DATA  en init.js
-//Paso 6: Luego de que tenemos la informacion hacemos un procedimiento para insertarlo en el HTML
-//paso 7: traemos los datos y lo guardamos en una variable, y con comillas invertidas (En contenido) y lo metemos con inner html
-//PASO 8: Hacer procedimiento para insertar en HTML el primer producto
-// PASO 9: hacer procedimiento para insertar todos los productos en el HTML
+const ORDER_ASC_BY_NAME_P = "AZ";
+const ORDER_DESC_BY_NAME_P = "ZA";
+const ORDER_BY_PROD_COUNT_P = "Cant.";
+var currentCategoriesArray_P = [];
+var currentSortCriteria_P = undefined;
+var minCount_P = undefined;
+var maxCount_P = undefined;
 
+function sortCategories(criteria, array) {
+    let result = [];
+    if (criteria === ORDER_ASC_BY_NAME_P) {
+        result = array.sort(function (a, b) {
+            if (a.name < b.name) { return -1; }
+            if (a.name > b.name) { return 1; }
+            return 0;
+        });
+    } else if (criteria === ORDER_DESC_BY_NAME_P) {
+        result = array.sort(function (a, b) {
+            if (a.name > b.name) { return -1; }
+            if (a.name < b.name) { return 1; }
+            return 0;
+        });
+    } else if (criteria === ORDER_BY_PROD_COUNT_P) {
+        result = array.sort(function (a, b) {
+            let aCount = parseInt(a.productCount);
+            let bCount = parseInt(b.productCount);
+
+            if (aCount > bCount) { return -1; }
+            if (aCount < bCount) { return 1; }
+            return 0;
+        });
+    }
+
+    return result;
+}
 var categoriesArray = [];
 
 function showCategoriesList(array) {
@@ -24,7 +49,7 @@ function showCategoriesList(array) {
                             <div class="d-flex w-100 justify-content-between">
                                 <h4 class="mb-1">`+ category.name + `</h4>
                                     
-                                <small class="text-muted"><h3>` + category.currency + category.cost + `</h3>`+ category.soldCount + ` Unidades vendidas</small>
+                                <small class="text-muted"><h3>` + category.currency + category.cost + `</h3>` + category.soldCount + ` Unidades vendidas</small>
                             </div>
                          <p class="descript">`+ category.description + `</p>
                             <p> <a type="button" class="btn btn-sm btn-outline-secondary" href="product-info.html" >🛈</a>
@@ -41,12 +66,28 @@ function showCategoriesList(array) {
         document.getElementById("products-list-container").innerHTML = htmlContentToAppend;
     }
 
+
+}
+function sortAndShowCategories(sortCriteria, categoriesArray) {
+    currentSortCriteria_P = sortCriteria;
+
+    if (categoriesArray != undefined) {
+        currentCategoriesArray_P = categoriesArray;
+    }
+
+    currentCategoriesArray_P = sortCategories(currentSortCriteria, currentCategoriesArray_P);
+
+    //Muestro las categorías ordenadas
+    showCategoriesList();
 }
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+
+
+
 
 document.addEventListener("DOMContentLoaded", function (e) {
     showSpinner()

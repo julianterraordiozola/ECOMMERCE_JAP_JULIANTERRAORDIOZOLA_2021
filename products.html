@@ -14,6 +14,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <script src="js/products.js"></script>
+  
 </head>
 
 <body>
@@ -36,26 +37,79 @@
         </div>
       </section>
 
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row" id="products-list-container"></div>
-        
-          <div class="row">
-            <a type="button" class="btn btn-light btn-lg btn-block" href="product-info.html">Ver todos</a>
+      <div class="container">
+        <div class="row">
+          <div class="col text-right">
+            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+              <label class="btn btn-light active" id="sortAsc_p">
+                <input type="radio" name="options" autocomplete="off" checked>A-Z
+              </label>
+              <label class="btn btn-light" id="sortDesc_p">
+                <input type="radio" name="options" autocomplete="off">Z-A
+              </label>
+              <label class="btn btn-light" id="sortByCount_p">
+                <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
+              </label>
+            </div>
           </div>
         </div>
 
+        <div class="row justify-content-end">
+          <div class="col-md-6"></div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <p class="font-weight-normal text-right my-2">Cant.</p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin_p">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax_p">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="rangeFilterCount_p">Filtrar</button>
+                  <button class="btn btn-link btn-sm" id="clearRangeFilter_p">Limpiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div id="spinner-wrapper">
-          <div class="lds-ring">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div> 
+        <div class="album py-5 bg-light">
+          <div class="container">
+            <div class="row" id="products-list-container"></div>
+
+
+
+            <div id="accordion" role="tablist">
+              <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                  <h5 class="mb-0">
+                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                     Ver todos
+                    </a>
+                  </h5>
+                </div>
+            
+                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                  </div>
+                </div>
+              </div>
+
+          <div id="spinner-wrapper">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -64,7 +118,7 @@
       </p>
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-
+    
     </div>
 
   </footer>

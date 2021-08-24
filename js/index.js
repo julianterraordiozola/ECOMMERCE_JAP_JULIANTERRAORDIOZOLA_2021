@@ -14,6 +14,7 @@ function validar(){
  }
 }
 
+
 document.addEventListener("DOMContentLoaded"), function(e){
 
 }

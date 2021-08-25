@@ -61,13 +61,7 @@
           placeholder="Dirección de correo electrónico   //  admin@jap" required>
         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña   // admin" required>
         <br>
-        <!--Boton de google-->
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <!--Script de google-->
-        <!--Script de Facebook-->
-        <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with"
-          data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-        <!--Script de google Facebook-->
+
         <div class="checkbox mb-3">
           <label>
             <input type="checkbox" value="remember-me" type="submit"> Recuerda mi cuenta
@@ -79,54 +73,92 @@
         <p class="warnings" id="warnings"></p>
         <button id="noTengocuenta" class="btn btn-lg btn-primary btn-block" type="submit"
           onclick="location.href='registro.html';">No tengo una cuenta</button>
+        <br>
 
-        <script>
-          function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-            //NO PUEDO SOLUCIONAR EL ERROR 400 EN EL LA VALIDACION DE GOOGLE//
-          }
-
-        </script>
-
-        <!--SCRIPT PARA LOGIN CON FACEBOOK-->
-        <script>
-          window.fbAsyncInit = function () {
-            FB.init({
-              appId: '{551737109578493}',
-              cookie: true,
-              xfbml: true,
-              version: '{v11.0}'
-            });
-
-            FB.AppEvents.logPageView();
-
-          };
-
-          (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));
-        </script>
-
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous"
-          src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0&appId=551737109578493&autoLogAppEvents=1"
-          nonce="z5U1vS5H"></script>
+        <!--Boton de google-->
 
 
 
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+        <!--Boton de Facebook-->
+
+
+
+
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <div class="botonGoogle" id="my-signin2"></div>
+          </li>
+          
+          <div class="m-0 bg-primary d-inline-block">
+            <li class="nav-item">
+              <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with"
+                data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
+            </li>
+          </div>
+        </ul>
+
+
+
       </form>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
 
-    </body>
-    <!--DESDE EL LINK DE LA PAGINA DE JAP, ENTRAMOS AL TEMPLATE DE LOGIN Y DESDE LA SECCION INSPECCIONAR
+  </div>
+
+
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+  <!--SCRIPT PARA LOGIN CON FACEBOOK-->
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '{551737109578493}',
+        cookie: true,
+        xfbml: true,
+        version: '{v11.0}'
+      });
+
+      FB.AppEvents.logPageView();
+
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0&appId=551737109578493&autoLogAppEvents=1"
+    nonce="XQNUxDXi"></script>
+
+
+
+</body>
+<!--DESDE EL LINK DE LA PAGINA DE JAP, ENTRAMOS AL TEMPLATE DE LOGIN Y DESDE LA SECCION INSPECCIONAR
   NOS TRAJIMOS EL CODIGO HTML Y LO INSERTAMOS DENTRO DEL BODY DE LOGIN.HTML  TENEMOS, tengo que ponerle-->
 
 </html>

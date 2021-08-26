@@ -1,4 +1,4 @@
-const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
+ const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
 const PRODUCTS_URL = "json/products.json";
@@ -75,9 +75,10 @@ function guardar_localstorage(){
 let inputEmail = "admin@jap"
 let inputPassword = "admin"
 
-
 localStorage.setItem("inputEmail", JSON.stringify(inputEmail));
 localStorage.setItem("inputPassword", JSON.stringify(inputPassword));
+
+
 
 
 //Tengo que chequear por que usar el JSON.strigify(Que beneficios trara?) o si simplemente pongo la variable inputPassword//

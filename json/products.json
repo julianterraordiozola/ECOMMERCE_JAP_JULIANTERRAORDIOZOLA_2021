@@ -1,7 +1,7 @@
 [
     {
         "name": "Chevrolet Onix",
-        "description": "Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad.",
+        "description": "Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad. Con el Onix sos vos",
         "cost": 13500,
         "currency": "USD",
         "imgSrc": "img/prod1.jpg",
@@ -9,7 +9,7 @@
     },
     {
         "name": "Fiat Way",
-        "description": "La versión de Fiat que brinda confort y a un precio accesible.",
+        "description": "La versión de Fiat que brinda confort y a un precio accesible. Excelente para toda la familia",
         "cost": 14500,
         "currency": "USD",
         "imgSrc": "img/prod2.jpg",

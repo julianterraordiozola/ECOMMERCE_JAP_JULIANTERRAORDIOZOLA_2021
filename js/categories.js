@@ -10,14 +10,22 @@ function sortCategories(criteria, array) {
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME) {
         result = array.sort(function (a, b) {
-            if (a.name < b.name) { return -1; }
-            if (a.name > b.name) { return 1; }
+            if (a.name < b.name) {
+                return -1;
+            }
+            if (a.name > b.name) {
+                return 1;
+            }
             return 0;
         });
     } else if (criteria === ORDER_DESC_BY_NAME) {
         result = array.sort(function (a, b) {
-            if (a.name > b.name) { return -1; }
-            if (a.name < b.name) { return 1; }
+            if (a.name > b.name) {
+                return -1;
+            }
+            if (a.name < b.name) {
+                return 1;
+            }
             return 0;
         });
     } else if (criteria === ORDER_BY_PROD_COUNT) {
@@ -25,8 +33,12 @@ function sortCategories(criteria, array) {
             let aCount = parseInt(a.productCount);
             let bCount = parseInt(b.productCount);
 
-            if (aCount > bCount) { return -1; }
-            if (aCount < bCount) { return 1; }
+            if (aCount > bCount) {
+                return -1;
+            }
+            if (aCount < bCount) {
+                return 1;
+            }
             return 0;
         });
     }
@@ -51,7 +63,7 @@ function showCategoriesList() {
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ category.name + `</h4>
+                            <h4 class="mb-1">` + category.name + `</h4>
                             <small class="text-muted">` + category.productCount + ` artículos</small>
                         </div>
                         <p class="mb-1">` + category.description + `</p>
@@ -82,11 +94,16 @@ function sortAndShowCategories(sortCriteria, categoriesArray) {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-    getJSONData(CATEGORIES_URL).then(function (resultObj) {
-        if (resultObj.status === "ok") {
-            sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
-        }
-    });
+    showSpinner()
+    setTimeout(() => {
+        getJSONData(CATEGORIES_URL).then(function (resultObj) {
+            if (resultObj.status === "ok") {
+                sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
+            }
+            hideSpinner();
+        });
+    }, 500);
+
 
     document.getElementById("sortAsc").addEventListener("click", function () {
         sortAndShowCategories(ORDER_ASC_BY_NAME);
@@ -118,15 +135,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0) {
             minCount = parseInt(minCount);
-        }
-        else {
+        } else {
             minCount = undefined;
         }
 
         if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0) {
             maxCount = parseInt(maxCount);
-        }
-        else {
+        } else {
             maxCount = undefined;
         }
 

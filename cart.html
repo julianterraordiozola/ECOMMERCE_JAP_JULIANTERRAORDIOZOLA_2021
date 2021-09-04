@@ -36,13 +36,14 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="main-header__right-side">
         <a class="py-2 d-none d-md-inline-block" href="cart.html">🛒</a>
-        <a class="py-1 d-none d-md-inline-block" href="index.html">Cerrar sesión</a>
+        <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">Cerrar sesión</a>
+        <a class="barra_usuario" id="barra_usuario" href="my-profile.html"></a>
       </div>
     </div>
   </nav>
@@ -54,7 +55,7 @@
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
       </div>
       <button id="volverAindex" class="btn btn-lg btn-primary btn-block" type="submit"
-              onclick="location.href='home.html';">Volvé a la pagina principal</button>
+              onclick="location.href='index.html';">Volvé a la pagina principal</button>
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">

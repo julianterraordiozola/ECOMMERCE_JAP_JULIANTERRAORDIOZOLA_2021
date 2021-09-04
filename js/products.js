@@ -1,5 +1,5 @@
-const ORDER_ASC_BY_NAME = "AZ";
-const ORDER_DESC_BY_NAME = "ZA";
+const ORDER_ASC_BY_PRICE = "🔼$" ;
+const ORDER_DESC_BY_PRICE = "🔽$" ;
 const ORDER_BY_PROD_COUNT = "Cant.";
 var currentCategoriesArray = [];
 var currentSortCriteria = undefined;
@@ -10,22 +10,22 @@ var maxCount = undefined;
 //Clasificar productos//
 function sortCategories(criteria, array) {
     let result = [];
-    if (criteria === ORDER_ASC_BY_NAME) {
+    if (criteria === ORDER_ASC_BY_PRICE) {
         result = array.sort(function (a, b) {
-            if (a.name < b.name) {
+            if (a.cost < b.cost) {
                 return -1;
             }
-            if (a.name > b.name) {
+            if (a.cost > b.cost) {
                 return 1;
             }
             return 0;
         });
-    } else if (criteria === ORDER_DESC_BY_NAME) {
+    } else if (criteria === ORDER_DESC_BY_PRICE) {
         result = array.sort(function (a, b) {
-            if (a.name > b.name) {
+            if (a.cost > b.cost) {
                 return -1;
             }
-            if (a.name < b.name) {
+            if (a.cost < b.cost) {
                 return 1;
             }
             return 0;
@@ -70,7 +70,6 @@ function showCategoriesList(array) {
                                                                   
                                 </div>  
                             </div>  
-
                          <p class="descript">` + category.description + `</p>
                          <div class="vendidos">
                             <small class="text-muted"><h3>` + category.currency + category.cost + `</h3>` + category.soldCount + ` Unidades vendidas</small>
@@ -130,11 +129,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
     document.getElementById("sortAsc").addEventListener("click", function () {
-        sortAndShowCategories(ORDER_ASC_BY_NAME);
+        sortAndShowCategories(ORDER_ASC_BY_PRICE);
     });
 
     document.getElementById("sortDesc").addEventListener("click", function () {
-        sortAndShowCategories(ORDER_DESC_BY_NAME);
+        sortAndShowCategories(ORDER_DESC_BY_PRICE);
     });
 
     document.getElementById("sortByCount").addEventListener("click", function () {

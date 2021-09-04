@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Ingresá a tu cuenta</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/login.js"></script>
+  
+  <!-- VOY A LINKEAR EL HTML CON EL JS -->
+  <!-- Google api -->
+  <meta name="google-site-verification" content="6fiqeoNA7TeBbgG_GwVHM0y7Qm7mJ2_3zksOVvuHh1c" />
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id"
+    content="873252683614-mq5lan1lv6jv4751t6lph77uem7vs3ea.apps.googleusercontent.com">
+
+</head>
+<!-- Google api -->
+
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+  }
+
+  .signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+</style>
+</head>
+
+<body class="text-center">
+  <div class="container p-5">
+
+    <body class="text-center">
+      <form class="form-signin" action="index.html">
+        <img class="btn btn-lg btn-primary2 btn-block" src="img/cover_back.png" width="1030" height="300">
+        <h1 class="h3 mb-3 font-weight-normal" class="valid-feedback">Ingresá a tu cuenta</h1>
+
+        <input type="email" id="inputEmail" class="form-control"
+          placeholder="Usuario o Dirección de correo electrónico" required>
+          
+        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+        <br>
+
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me" type="submit"> Recuerda mi cuenta
+            <a href="olvidocontraseña.html">He olvidado la contraseña</a>
+          </label>
+        </div>
+        <button id="botonLogin" class="btn btn-lg btn-primary2 btn-block" type="submit" onclick="ingresar_index()">Ingresá a
+          eMercado</button>
+        <p class="warnings" id="warnings"></p>
+        <button id="noTengocuenta" class="btn btn-lg btn-primary btn-block" type="submit"
+          onclick="location.href='registro.html';">No tengo una cuenta</button>
+        <br>
+
+
+      </form>
+      <!--Boton de google-->
+      <div class="container">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <div class="botonGoogle" id="my-signin2"></div>
+          </li>
+
+          <!--Boton de FAcebook-->
+          <div class="nav justify-content-center">
+            <li class="nav-item">
+              <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with"
+                data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
+            </li>
+          </div>
+        </ul>
+      </div>
+
+
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+
+  </div>
+
+  <!--SCRIPT de google-->
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+
+    function onFailure(error) {
+      console.log(error);
+    }
+
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+  <!--SCRIPT PARA LOGIN CON FACEBOOK-->
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '{551737109578493}',
+        cookie: true,
+        xfbml: true,
+        version: '{v11.0}'
+      });
+
+
+      FB.AppEvents.logPageView();
+
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0&appId=551737109578493&autoLogAppEvents=1";
+
+
+  <script async diferir crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
+</body>
+<!--DESDE EL LINK DE LA PAGINA DE JAP, ENTRAMOS AL TEMPLATE DE LOGIN Y DESDE LA SECCION INSPECCIONAR
+  ME TRAJE EL CODIGO HTML Y LO INSERTAMOS DENTRO DEL BODY DE LOGIN.HTML-->
+
+</html>

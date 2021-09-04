@@ -1,4 +1,6 @@
 
+
+
 function crearRegistro() {
   var userName = document.getElementById("userName").value;
   var emailRegistro = document.getElementById("emailRegistro").value;

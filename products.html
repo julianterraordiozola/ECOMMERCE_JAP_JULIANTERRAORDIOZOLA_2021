@@ -18,15 +18,17 @@
 
 <body>
   <!--BARRA DE NAVEGACIÓN-->
+
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="main-header__right-side">
         <a class="py-2 d-none d-md-inline-block" href="cart.html">🛒</a>
-        <a class="py-1 d-none d-md-inline-block" href="index.html">Cerrar sesión</a>
+        <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">Cerrar sesión</a>
+        <a class="barra_usuario" id="barra_usuario" href="my-profile.html"></a>
       </div>
     </div>
   </nav>
@@ -41,17 +43,38 @@
       <!--CLASIFICADORES DE -->
       <div class="container">
         <div class="row">
+        <!-- BUSCADOR DE ARTICULO  POR TEXTO -->
+          <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="text" placeholder="Buscar...">
+              <button class="btn btn-outline-success my-3 my-sm-0" type="submit">BUSCAR</button>
+            </form>
+          </nav>
           <div class="col text-right">
-            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-              <label class="btn btn-light active" id="sortAsc">
-                <input type="radio" name="options" autocomplete="off" checked>A-Z
-              </label>
-              <label class="btn btn-light" id="sortDesc">
-                <input type="radio" name="options" autocomplete="off">Z-A
-              </label>
-              <label class="btn btn-light" id="sortByCount">
-                <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
-              </label>
+            
+            <div class="container">
+              
+                <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+
+                  <!--<label class="btn btn-light active" id="sortAsc">
+                    <input type="radio" name="options" autocomplete="off" checked>A-Z
+                  </label>
+                  <label class="btn btn-light" id="sortDesc">
+                    <input type="radio" name="options" autocomplete="off">Z-A
+                  </label>-->
+                  <label class="btn btn-light" id="sortAsc">
+                    <input type="radio" name="options" autocomplete="off">🔼$
+                  </label>
+                  <label class="btn btn-light" id="sortDesc">
+                    <input type="radio" name="options" autocomplete="off">🔽$
+                  </label>
+
+                  <label class="btn btn-light" id="sortByCount">
+                    <input type="radio" name="options" autocomplete="off"><i
+                      class="fas fa-sort-amount-down mr-1"></i>Cant.
+                  </label>
+                </div>
+              
             </div>
           </div>
         </div>
@@ -63,10 +86,10 @@
                 <p class="font-weight-normal text-right my-2">Cant.</p>
               </div>
               <div class="col">
-                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+                <input class="form-control" type="number" placeholder="$ min." id="rangeFilterCountMin">
               </div>
               <div class="col">
-                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+                <input class="form-control" type="number" placeholder="$ máx." id="rangeFilterCountMax">
               </div>
               <div class="col-3 p-0">
                 <div class="btn-group" role="group">
@@ -79,6 +102,7 @@
         </div>
 
       </div>
+     
       <!--CARTAS PARA PRODUCTOS-->
       <div class="album py-5 bg-light">
         <div class="container">

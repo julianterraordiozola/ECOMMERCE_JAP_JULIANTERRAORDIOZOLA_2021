@@ -6,162 +6,128 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>eMercado - Ingresá a tu cuenta</title>
+  <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <script src="js/index.js"></script>
-  <!-- VOY A LINKEAR EL HTML CON EL JS -->
-  <!-- Google api -->
-  <meta name="google-site-verification" content="6fiqeoNA7TeBbgG_GwVHM0y7Qm7mJ2_3zksOVvuHh1c" />
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id"
-    content="873252683614-mq5lan1lv6jv4751t6lph77uem7vs3ea.apps.googleusercontent.com">
-
-</head>
-<!-- Google api -->
-
-<style>
-  html,
-  body {
-    height: 100%;
-  }
-
-  body {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #f5f5f5;
-  }
-
-  .signin {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
-  }
-</style>
 </head>
 
-<body class="text-center">
-  <div class="container p-5">
+<body>
 
-    <body class="text-center">
-      <form class="form-signin" action="index.html">
-        <img class="btn btn-lg btn-primary2 btn-block" src="img/cover_back.png" width="1030" height="300">
-        <h1 class="h3 mb-3 font-weight-normal" class="valid-feedback">Ingresá a tu cuenta</h1>
-
-        <input type="email" id="inputEmail" class="form-control"
-          placeholder="Dirección de correo electrónico   //  admin@jap" required>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña   // admin" required>
-        <br>
-
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me" type="submit"> Recuerda mi cuenta
-            <a href="olvidocontraseña.html">He olvidado la contraseña</a>
-          </label>
-        </div>
-        <button id="botonLogin" class="btn btn-lg btn-primary2 btn-block" type="submit" onclick="validar()">Ingresá a
-          eMercado</button>
-        <p class="warnings" id="warnings"></p>
-        <button id="noTengocuenta" class="btn btn-lg btn-primary btn-block" type="submit"
-          onclick="location.href='registro.html';">No tengo una cuenta</button>
-        <br>
-
-
-      </form>
-      <!--Boton de google-->
-      <div class="justify-content-center">
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <div class="botonGoogle" id="my-signin2"></div>
-          </li>
-
-          <!--Boton de FAcebook-->
-          <div class="nav justify-content-center">
-            <li class="nav-item">
-              <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with"
-                data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
-            </li>
-          </div>
-        </ul>
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <div class="main-header__right-side">
+        <a class="py-2 d-none d-md-inline-block" href="cart.html">🛒</a>
+        <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">Cerrar sesión</a>
+        <a class="barra_usuario" id="barra_usuario" href="my-profile.html"></a>
       </div>
 
+    </div>
+  </nav>
+  <span class="border-right-0">
+    <span class="border-bottom-0"></span>
+    <span class="border-left-0"></span>
 
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+    <main role="main">
+      <section class="jumbotron text-center">
+        <div class="m-5">
+          <h1></h1>
+        </div>
+      </section>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="list-group" id="cat-list-container"></div>
 
-  </div>
+            <div class="col-md-4">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat1.jpg">
+                <h3 class="m-3">Autos (122)</h3>
+                <div class="card-body">
+                  <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
+                </div>
+              </a>
+            </div>
 
-  <!--SCRIPT de google-->
-  <script>
-    function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
+            <div class="col-md-4">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat2.jpg">
+                <h3 class="m-3">Juguetes (354)</h3>
+                <div class="card-body">
+                  <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
+                </div>
+              </a>
+            </div>
 
-    function onFailure(error) {
-      console.log(error);
-    }
+            <div class="col-md-4">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat3.jpg">
+                <h3 class="m-3">Muebles (157)</h3>
+                <div class="card-body">
+                  <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
+                </div>
+              </a>
+            </div>
 
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
-  </script>
+            <div class="col-md-4">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat4.jpg">
+                <h3 class="m-3">Herramientas (452)</h3>
+                <div class="card-body">
+                  <p class="card-text">Herramientas para cualquier tipo de trabajo.</p>
+                </div>
+              </a>
+            </div>
 
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+            <div class="col-md-4">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat5.jpg">
+                <h3 class="m-3">Computadoras (724)</h3>
+                <div class="card-body">
+                  <p class="card-text">Todo en cuanto a computadoras, para uso de oficina y/o juegos.</p>
+                </div>
+              </a>
+            </div>
 
-  <!--SCRIPT PARA LOGIN CON FACEBOOK-->
-  <script>
-    window.fbAsyncInit = function () {
-      FB.init({
-        appId: '{551737109578493}',
-        cookie: true,
-        xfbml: true,
-        version: '{v11.0}'
-      });
+            <div class="col-md-4">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat6.jpg">
+                <h3 class="m-3">Vestimenta (841)</h3>
+                <div class="card-body">
+                  <p class="card-text">Gran variedad de ropa, nueva y de segunda mano.</p>
+                </div>
+              </a>
+            </div>
 
+          </div>
+          <div class="row">
+            <a type="button" class="btn btn-light btn-lg btn-block" href="categories.html">Ver todas</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2021</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
 
-      FB.AppEvents.logPageView();
-
-    };
-
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {
-        return;
-      }
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-
-  <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous"
-    src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0&appId=551737109578493&autoLogAppEvents=1"
-    nonce="XQNUxDXi"></script>
-
-
-  <script async diferir crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-
+      </div>
+    </footer>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+  </span>
 
 </body>
-<!--DESDE EL LINK DE LA PAGINA DE JAP, ENTRAMOS AL TEMPLATE DE LOGIN Y DESDE LA SECCION INSPECCIONAR
-  NOS TRAJIMOS EL CODIGO HTML Y LO INSERTAMOS DENTRO DEL BODY DE LOGIN.HTML  TENEMOS, tengo que ponerle-->
 
 </html>

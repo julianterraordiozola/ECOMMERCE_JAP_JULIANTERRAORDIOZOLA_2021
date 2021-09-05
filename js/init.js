@@ -62,7 +62,7 @@ function mostrar_usuario() {
 
   let htmlContentToAppend = "";
 
-  htmlContentToAppend += `<a class="barra_usuario"> ${sessionStorage.getItem('Email')}</a>`
+  htmlContentToAppend += `<a class="barra_usuario">👤 ${sessionStorage.getItem('Email')}</a>`
   
   document.getElementById("barra_usuario").innerHTML = htmlContentToAppend;
 }

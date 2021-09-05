@@ -1,10 +1,11 @@
-const ORDER_ASC_BY_PRICE = "🔼$" ;
-const ORDER_DESC_BY_PRICE = "🔽$" ;
+const ORDER_ASC_BY_PRICE = "🔼$";
+const ORDER_DESC_BY_PRICE = "🔽$";
 const ORDER_BY_PROD_COUNT = "Cant.";
 var currentCategoriesArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
+
 
 
 //Clasificar productos//
@@ -53,7 +54,7 @@ function showCategoriesList(array) {
 
     let htmlContentToAppend = " ";
     for (let i = 0; i < array.length; i++) {
-        debugger;
+
         let category = array[i];
         if (((minCount == undefined) || (minCount != undefined && parseInt(category.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.cost) <= maxCount))) {
@@ -169,6 +170,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
 
         showCategoriesList(currentCategoriesArray);
+
+        
     });
 
+
+
 });
+
+

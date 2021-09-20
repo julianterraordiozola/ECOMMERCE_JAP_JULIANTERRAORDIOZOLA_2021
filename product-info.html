@@ -29,24 +29,123 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <main role="main">
+    <div class="container p-md-5">
+      <div class="album py-5 bg-light">
+
+        <div class="container">
+          <div class="row" id="products-list-container"></div>
+
+
+          <!--carrusel -->
+          <!--Titulo de producto -->
+          <h1 id="categoryName" class="nombre_producto1"></h1>
+
+          <dd>
+            <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+            </div>
+          </dd>
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+            <div class="carousel-inner" role="listbox" id="imagenes_carrusel"></div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <dt>Imágenes ilustrativas</dt><br>
+          </div>
+        </div>
+
+
+
+
+        <!-- AGREGO FORMATO PARA DATOS -->
+
+
+        <dl>
+          <dt>Descripción</dt>
+          <dd>
+            <p id="categoryDescription"></p>
+          </dd>
+
+          <dt>Cantidad de productos vendidos</dt>
+          <dd>
+            <p id="productCount"></p>
+          </dd>
+
+          <dt>Tipo de producto</dt>
+          <dd>
+            <p id="productCriteria"></p>
+          </dd>
+
+          <dt>Precio</dt>
+          <h3 class="costo">
+            <a id="currency"></a>
+            <a id="cost"></a>
+          </h3>
+
+          <a type="button" class="btn btn-sm btn-outline-secondary" href="cart.html">🛒Agregar al carrito</a>
+        </dl><br><br>
+
+
+        <!--Titulo de comentarios -->
+
+        <h2>Comentarios de nuestros compradores💬</h2>
+        <div class="container p-md-5" id="agregar_comentarios"></div>
+
+
+
+        <!-- ENVIAR COMENTARIOS DEL -->
+
+        <div class="container p-md-5" id="mostrar_comentario">
+          <div class="input-group-prepend"><br>
+            <button class="btn btn-success" id="boton_comentario" type="button"
+              onclick="guardar_comentario()">Enviar</button>
+          </div>
+          <input type="text" id="comentario_producto" class="form-control" placeholder="Dejanos tu opinión sobre el producto" aria-label=""
+            aria-describedby="basic-addon1">
+          <div class="titulo_puntuar">Puntuá este producto</div>
+          <div class="estrellas" id="puntuacion_producto">
+            <a>⭐</a>
+            <a>⭐</a>
+            <a>⭐</a>
+            <a>⭐</a>
+            <a>⭐</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESTRELLAS PARA CALIFICAR -->
+
+
+
+      <div>
+        <div class="container p-md-5">
+          <div class="input-group-prepend">
+            <button class="btn btn-secondary" id="cambie_opinion" type="button" onclick="cambie_opinion()">Cambié
+              de
+              opinion</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <button id="volverAindex" class="btn btn-lg btn-primary btn-block" type="submit"
-              onclick="location.href='home.html';">Volvé a la pagina principal</button>
-  </div>
-  <footer class="text-muted">
+    </div>
+
+
+  </main>
+
+  <footer class="text-muted bg-light">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
       </p>
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
   </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -60,6 +159,8 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  </div>
+  </div>
 </body>
 
 </html>

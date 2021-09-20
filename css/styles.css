@@ -1,13 +1,16 @@
-.jumbotron, .card-body, .container, .site-header{
-    font-family: 'Raleway', serif !important;
+.jumbotron,
+.card-body,
+.container,
+.site-header {
+  font-family: 'Raleway', serif !important;
 }
 
-.jumbotron .display-4{
-    font-weight: bold;
+.jumbotron .display-4 {
+  font-weight: bold;
 }
 
 .jumbotron {
-  
+
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
@@ -42,7 +45,7 @@
   text-shadow: 1px 1px 2px grey;
 }
 
-.jumbotron .lead{
+.jumbotron .lead {
   font-size: 38px;
 }
 
@@ -68,15 +71,15 @@ footer p {
   color: black;
 }
 
-.dropzone{
+.dropzone {
   border: 2px dashed #0087F7;
   border-radius: 5px;
   background: white;
 }
 
-.alert{
+.alert {
   position: fixed;
-  top:80px;
+  top: 80px;
   width: 50%;
   left: 50%;
   transform: translate(-50%, 0);
@@ -87,9 +90,10 @@ footer p {
   position: relative;
   width: 64px;
   height: 64px;
-  top:50%;
+  top: 50%;
   left: 50%;
 }
+
 .lds-ring div {
   box-sizing: border-box;
   display: block;
@@ -102,31 +106,36 @@ footer p {
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: #fff transparent transparent transparent;
 }
+
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
 }
+
 .lds-ring div:nth-child(2) {
   animation-delay: -0.3s;
 }
+
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
-#spinner-wrapper{
+#spinner-wrapper {
   position: fixed;
-  background-color: rgba(0,0,0,0.5);
-  width:100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
   height: 100%;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: 1021;
   display: none;
 }
@@ -144,60 +153,122 @@ a.custom-card:hover {
 .text-center {
   color: rgb(0, 0, 0);
 }
- 
+
 
 
 /*VOY A CAMBIARLE EL COLOR A LOS BOTONES CON DIFERENTES IDS DE LA FAMILIA  LOGIN */
 
 
 .warnings {
-width:200px;
-text-align: center;
-margin:auto;
-color:black;
-padding-top: 20px;
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  color: black;
+  padding-top: 20px;
 
 }
 
 
 .textoLink {
-  position: absolute;  
-  text-align: center; 
-  right: 0;  
-  width: 100px;  
+  position: absolute;
+  text-align: center;
+  right: 0;
+  width: 100px;
   height: 100px;
-  padding-right: 300px; 
-   
+  padding-right: 300px;
+
 }
 
 .botonGoogle {
 
-  padding: right 5%;; 
+  padding: right 5%;
+  ;
 
 }
 
 .nav-item {
 
-  padding-left: 20%; 
+  padding-left: 20%;
 
 }
 
 .vendidos {
 
-  
+
   text-decoration-color: rgb(88, 87, 85);
 
 }
 
 .barra_usuario {
-  color: rgb(225, 0, 255) ;
+  color: rgb(225, 0, 255);
   text-shadow: 0 0 8px #fff;
-    
+
+}
+
+.nombre_producto1 {
+
+  text-align: left;
+  color: rgb(245, 50, 180);
+  border: darkmagenta;
+  font-weight: bold;
+  background: rgb(255, 79, 255);
+  text-shadow: 0 0 10px #fff;
+}
+
+
+.titulos_comentarios {
+  font-weight: bold;
+  text-align: left;
+
 }
 
 
 
+.texto_descripcion {
+  text-decoration-color: cyan;
+  background: rgb(113, 223, 231);
+  font-size: large;
+  font-weight: bold;
+}
 
+
+
+.estrellas {
+  display: flex;
+}
+
+.estrellas a {
+  opacity: 50%;
+  cursor: pointer;
+  padding: 3px;
+
+}
+
+.estrellas:hover a {
+  opacity: 100%;
+
+}
+
+.estrellas a:hover {
+  opacity: 100%;
+
+}
+
+.estrellas a:hover~a {
+  opacity: 50%;
+
+}
+
+.estrellas a.active{
+  opacity: 100%;
+}
+
+.titulo_puntuar {
+  font-weight: bold;
+}
+
+.estrellas.disabled {
+  pointer-events: none;
+}
 
 /*CAMBIA EL COLOR DE LOS TEXTOS EN EL CENTRO*/
-

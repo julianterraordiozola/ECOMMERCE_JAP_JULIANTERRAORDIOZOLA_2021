@@ -1,6 +1,8 @@
 const estrellaEnvuelta = document.querySelector(".estrellas");
 const estrellas = document.querySelectorAll(".estrellas a");
 
+
+//FUNCION PARA ESTRELLAS//
 estrellas.forEach((estrella, estrellaClickeada) => {
     estrella.addEventListener("click", () => {
         estrellaEnvuelta.classList.add("disabled");
@@ -19,7 +21,6 @@ estrellas.forEach((estrella, estrellaClickeada) => {
 var category = {};
 
 //FUNCIONES PARA EL CARRUSEL//
-
 function showImagesGallery(array) {
 
     let htmlContentToAppend = "";
@@ -49,18 +50,16 @@ function showImagesGallery(array) {
     }
 }
 
+//alert(now); // muestra en pantalla la fecha y la hora actuales//
 function guardar_hora() {
     let now = new Date();
 
     sessionStorage.setItem('now', now)
 
 }
-//alert(now); // muestra en pantalla la fecha y la hora actuales//
-
 
 
 //FUNCIONES PARA EL ENVIO DE COMENTARIOS//
-
 function guardar_comentario() {
     let Comentario = document.getElementById('comentario_producto').value;
     //Si no es exactamente igual a vacio Guardo en local storage el comentario generado en el campo//
@@ -74,14 +73,11 @@ function guardar_comentario() {
 
 };
 
-
-
-
 function enviar_comentario() {
 
     let htmlContentToAppend = "";
 
-    htmlContentToAppend += ` <div class="list-group-item list-group-item-action">
+    htmlContentToAppend += ` MI OPINIÓN ES:  <div class="list-group-item list-group-item-action">
                         
                         
     <div class="vendidos">
@@ -110,7 +106,6 @@ function enviar_comentario() {
 
 }
 
-
 function cambie_opinion() {
 
     localStorage.removeItem('Comentario');
@@ -120,7 +115,6 @@ function cambie_opinion() {
 }
 
 
-
 //FUNCION PARA MOSTRAR LA LISTA DE COMENTARIOS JSON y ESTRELLAS//
 function showCommentsList(array) {
 
@@ -128,10 +122,10 @@ function showCommentsList(array) {
     for (let i = 0; i < array.length; i++) {
 
         let comments = array[i];
-        
 
-        if (array[i].score === 1) {           
-            
+
+        if (array[i].score === 1) {
+
 
             htmlContentToAppend += `
 
@@ -162,10 +156,8 @@ function showCommentsList(array) {
 </div>
  `
 
-        }
+        } else if (array[i].score === 2) {
 
-        else if (array[i].score === 2) {
-         
             htmlContentToAppend += `
 
                         
@@ -195,10 +187,8 @@ function showCommentsList(array) {
 </div>
  `
 
-        }
+        } else if (array[i].score === 3) {
 
-        else if (array[i].score === 3) {
-                       
 
             htmlContentToAppend += `
 
@@ -229,10 +219,9 @@ function showCommentsList(array) {
 </div>
  `
 
-        }
-        else if (array[i].score === 4) {
-                       
-           
+        } else if (array[i].score === 4) {
+
+
             htmlContentToAppend += `
 
                         
@@ -261,9 +250,8 @@ function showCommentsList(array) {
  </div>
   `
 
-        }
-        else if (array[i].score === 5) {
-           
+        } else if (array[i].score === 5) {
+
             htmlContentToAppend += `
 
                         
@@ -293,23 +281,68 @@ function showCommentsList(array) {
  </div>
   `
 
+        } else {
+            console.log("Debe tener una calificación de 1 a 5")
         }
-else{
-    console.log("Debe tener una calificación de 1 a 5")
-}
-        
+
 
     }
     document.getElementById("agregar_comentarios").innerHTML = htmlContentToAppend;
 }
 
+//Funcion para mostrar los productos relacionados
+function mostrarRelacionados(relatedProducts) {
+    getJSONData(PRODUCTS_URL).then(function (respuesta1) {
+        if (respuesta1.status === "ok") {
+
+            let productos = respuesta1.data;
+            let indiceArray = relatedProducts;
+            let contenedor = document.getElementById("relacionados");
+
+            for (let i = 0; i < indiceArray.length; i++) {
+                console.log('hola');
+                let indiceActual = indiceArray[i]
+                let productos_relacionados = productos[indiceActual]
+                let nombre = productos_relacionados.name
+                let precio = productos_relacionados.currency + " " + productos_relacionados.cost
+                let foto = productos_relacionados.imgSrc
+                let descripcion = productos_relacionados.description
+                let vendidos = productos_relacionados.soldCount
+
+                contenedor.innerHTML += `
+<div class="col-md-12">
+                    <div class="card mb-4 box-shadow">
+                        <img src="${foto}" class="card-img-top">
+                        <div class="card-body">
+                            
+                            <div class="d-flex w-100 justify-content-between">
+                              <h4 class="mb-1">${nombre}</h4>
+                                                                  
+                            </div>  
+                              
+                         <p class="descript">${descripcion}</p>
+                         
+                            <small class="text-muted"><h3>${precio}</h3>${vendidos}Unidades vendidas</small>
+                         
+                         <br>
+                            <p> <a type="button" class="btn btn-sm btn-outline-secondary" href="product-info.html" >🛈</a>
+                             <a type="button"  class="btn btn-sm btn-outline-secondary" href="cart.html">🛒Agregar al carrito</a>
+                            </p>
+                        </div>
+                    <div>
+                    
+                </div>
+            </div>
+         </div>`
+
+            }
 
 
+        }
+    });
+}
 
-
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+//EVENTOS AL DOM
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
@@ -324,6 +357,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             let productCostHTML = document.getElementById("cost");
 
 
+
             productNameHTML.innerHTML = category.name;
             productDescriptionHTML.innerHTML = category.description;
             productCountHTML.innerHTML = category.soldCount;
@@ -333,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             //Muestro las imagenes en forma de galería//
             showImagesGallery(category.images);
-
+            mostrarRelacionados(category.relatedProducts);
 
         }
     });
@@ -341,8 +375,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 });
 
-//Obtengo la info de los comentarios de la url y los muestro//
-
+//1-Obtengo la info de los comentarios de la url y los muestro//
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
@@ -350,9 +383,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             showCommentsList(comments);
 
-
         }
     });
-
-
 });
+

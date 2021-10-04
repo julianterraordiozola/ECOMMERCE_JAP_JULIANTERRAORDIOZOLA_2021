@@ -25,12 +25,22 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="main-header__right-side">
         <a class="py-2 d-none d-md-inline-block" href="cart.html">🛒</a>
-        <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">Cerrar sesión</a>
-        <a class="barra_usuario" id="barra_usuario" href="my-profile.html"></a>
-      </div>
 
+        
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="barra_usuario" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <a class="barra_usuario" id="mi_perfil" href="my-profile.html">&nbsp&nbsp Mi perfil</a><br>
+            <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">&nbsp&nbsp Cerrar sesión</a>
+          </div>
+
+      </div>
     </div>
   </nav>
+
+
   <span class="border-right-0">
     <span class="border-bottom-0"></span>
     <span class="border-left-0"></span>

@@ -42,11 +42,21 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="main-header__right-side">
         <a class="py-2 d-none d-md-inline-block" href="cart.html">🛒</a>
-        <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">Cerrar sesión</a>
-        <a class="barra_usuario" id="barra_usuario" href="my-profile.html"></a>
+
+        
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="barra_usuario" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <a class="barra_usuario" id="mi_perfil" href="my-profile.html">&nbsp&nbsp Mi perfil</a><br>
+            <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">&nbsp&nbsp Cerrar sesión</a>
+          </div>
+        
       </div>
     </div>
   </nav>
+
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
@@ -55,7 +65,7 @@
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
       </div>
       <button id="volverAindex" class="btn btn-lg btn-primary btn-block" type="submit"
-              onclick="location.href='product-info.html';">Volvé a la pagina principal</button>
+              onclick="location.href='products.html';">Volvé a la pagina principal</button>
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">

@@ -49,7 +49,28 @@ function sortCategories(criteria, array) {
     return result;
 }
 
+//Funcion para el buscador de productos por nombre
+function myFunction() {
+    var input, filter, links, h4, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
 
+    links = document.getElementsByTagName("h4");
+    for (i = 0; i < links.length; i++) {
+        h4 = links[i];
+        txtValue = h4.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            h4.parentNode.parentNode.parentNode.style.display = "";
+
+
+        } else {
+            h4.parentNode.parentNode.parentNode.style.display = "none";
+
+        }
+    }
+}
+
+//funcion para mostrar la lista de productos 
 function showCategoriesList(array) {
 
     let htmlContentToAppend = " ";
@@ -77,7 +98,7 @@ function showCategoriesList(array) {
                          </div>
                          <br>
                             <p> <a type="button" class="btn btn-sm btn-outline-secondary" href="product-info.html" >🛈</a>
-                             <a type="button"  class="btn btn-sm btn-outline-secondary" href="cart.html">🛒</a>
+                             <a type="button"  class="btn btn-sm btn-outline-secondary" href="cart.html">🛒Agregar al carrito</a>
                             </p>
                         </div>
                     <div>
@@ -94,6 +115,7 @@ function showCategoriesList(array) {
 
 }
 
+//Mostrar la lista ordenada
 function sortAndShowCategories(sortCriteria, categoriesArray) {
     currentSortCriteria = sortCriteria;
 
@@ -107,14 +129,7 @@ function sortAndShowCategories(sortCriteria, categoriesArray) {
     showCategoriesList(currentCategoriesArray);
 }
 
-
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-
-
-
-
+//Enventos asignados al dom
 document.addEventListener("DOMContentLoaded", function (e) {
     showSpinner()
     setTimeout(() => {
@@ -139,6 +154,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     document.getElementById("sortByCount").addEventListener("click", function () {
         sortAndShowCategories(ORDER_BY_PROD_COUNT);
+    });
+
+
+    document.getElementById("clearRangeBuscador").addEventListener("click", function () {
+        document.getElementById("myInput").value = "";
     });
 
     document.getElementById("clearRangeFilter").addEventListener("click", function () {
@@ -171,11 +191,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         showCategoriesList(currentCategoriesArray);
 
-        
+
     });
 
 
 
 });
-
-

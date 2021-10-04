@@ -27,11 +27,22 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="main-header__right-side">
         <a class="py-2 d-none d-md-inline-block" href="cart.html">🛒</a>
-        <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">Cerrar sesión</a>
-        <a class="barra_usuario" id="barra_usuario" href="my-profile.html"></a>
+
+
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="barra_usuario" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <a class="barra_usuario" id="mi_perfil" href="my-profile.html">&nbsp&nbsp Mi perfil</a><br>
+          <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">&nbsp&nbsp Cerrar
+            sesión</a>
+        </div>
+
       </div>
     </div>
   </nav>
+
   <!--TITULO Y CONTENEDOR GENERAL-->
   <main role="main">
     <div class="container p-5">
@@ -43,12 +54,15 @@
       <!--CLASIFICADORES DE -->
       <div class="container">
         <div class="row">
-          
+
           <!-- BUSCADOR DE ARTICULO  POR TEXTO -->
+                    
           <nav class="navbar navbar-light bg-light">
             <form class="form-inline">
-              <input class="form-control mr-sm-2" id="buscador" type="text" placeholder="🔎Buscar...">
-              <button class="btn btn-lg btn-primary btn" id="boton_buscador" type="submit">BUSCAR</button>
+              <div><input type="text" id="myInput" onkeyup="myFunction()" placeholder="🔎Buscar..."
+                  title="Type in a name">
+              </div>
+              <button class="btn btn-link btn-sm" id="clearRangeBuscador">Limpiar</button>
             </form>
           </nav>
 
@@ -91,10 +105,10 @@
                 <p class="font-weight-normal text-right my-2">Cant.</p>
               </div>
               <div class="col">
-                <input class="form-control" type="number" placeholder="$ min." id="rangeFilterCountMin">
+                <input class="form-control" type="number" step="1000" placeholder="$ Min. &nbsp&nbsp" id="rangeFilterCountMin">
               </div>
               <div class="col">
-                <input class="form-control" type="number" placeholder="$ máx." id="rangeFilterCountMax">
+                <input class="form-control" type="number" step="1000" placeholder="$ Máx. &nbsp&nbsp" id="rangeFilterCountMax">
               </div>
               <div class="col-3 p-0">
                 <div class="btn-group" role="group">

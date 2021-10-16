@@ -11,29 +11,15 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
+
+  <!-- NAV SUPERIOR GENERAL DE TODAS LAS PAGINAS  -->
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -43,43 +29,149 @@
       <div class="main-header__right-side">
         <a class="py-2 d-none d-md-inline-block" href="cart.html">🛒</a>
 
-        
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="barra_usuario" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <a class="barra_usuario" id="mi_perfil" href="my-profile.html">&nbsp&nbsp Mi perfil</a><br>
-            <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">&nbsp&nbsp Cerrar sesión</a>
-          </div>
-        
+
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="barra_usuario" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+        </button>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <a class="barra_usuario" id="mi_perfil" href="my-profile.html">&nbsp&nbsp Mi perfil</a><br>
+          <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">&nbsp&nbsp Cerrar
+            sesión</a>
+        </div>
+
       </div>
     </div>
   </nav>
 
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-      </div>
-      <button id="volverAindex" class="btn btn-lg btn-primary btn-block" type="submit"
-              onclick="location.href='products.html';">Volvé a la pagina principal</button>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+  <!-- FORMATO DE PAGINA DEL CARRITO -->
+  <main role="main" class="pb-5">
+    <div class="text-center p-3">
+      <h2>Tu carrito de compras🛒</h2>
+      <p class="lead">Gracias por elegirnos! Podes continuar seleccionando productos o proceder con el pago.</p>
     </div>
-  </div>
+
+
+    <div class="container mt-1 p-2 rounded cart">
+      <div class="row no-gutters">
+        <div class="col-md-8">
+          <div class="product-details mr-2">
+            <div class="d-flex flex-row align-items-center"><i class="fa fa-long-arrow-left"></i><a class="ml-2"
+                href="categories.html">Continuá comprando</a></div>
+            <hr>
+            <h6 class="mb-0"></h6>
+            <div class="d-flex justify-content-between"><span></span>
+
+              <!-- ORGANIZADORES -->
+              <div class="d-flex flex-row align-items-center"><span class="text-black-50">Ordenar según:</span>
+                <div class="price ml-2"><span class="mr-1">Precio</span><i class="fa fa-angle-down"></i></div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- BARRA DE TITULOS -->
+          <div class="d-flex text-white" id="barra_titulos">
+            <div class="p-2 flex-fill bg-secondary">Producto</div>
+            <div class="p-2 flex-fill bg-secondary" id="montos_parciales">Montos parciales</div>
+            <div class="p-2 flex-fill bg-secondary" id="cantidad_productos">Cantidad</div>
+          </div>
+          
+          <!-- CONTENEDOR PARA INSERTAR LOS PRODUCTOS -->
+          <div class="container" id="contenedor_productos"></div>
+
+
+        </div>
+        <div class="col-md-4">
+          <div class="payment-info">
+            <div class="d-flex justify-content-between align-items-center"><span>Finalizacion de la compra</span></div>
+
+            <!--CHEKOUT-->
+            <!-- METÓDO DE PAGO -->
+            <span class="type d-block mt-3 mb-1">Metódo de pago</span><label class="radio"> <input type="radio"
+                name="card" value="payment" id="metodo_1" checked> <span><img width="30"
+                  src="https://img.icons8.com/color/48/000000/mastercard.png" /></span> </label>
+            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_2"> <span><img width="30"
+                  src="https://img.icons8.com/officel/48/000000/visa.png" /></span> </label>
+            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_3"> <span><img width="30"
+                  src="https://img.icons8.com/ultraviolet/48/000000/amex.png" /></span> </label>
+            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_4"> <span><img width="30"
+                  src="https://img.icons8.com/officel/48/000000/paypal.png" /></span> </label>
+
+            <!--DATOS CLIENTE-->
+            <div><label class="credit-card-label">Titular de la compra</label><input type="text"
+                class="form-control credit-inputs" placeholder="xxxxx xxxxx xxxxx"></div>
+            <div><label class="credit-card-label">Dirección de correo electrónico</label><input type="email"
+                class="form-control credit-inputs" placeholder="xxxxx@xxxx"></div>
+            <div class="row">
+              <div class="col-md-6"><label class="credit-card-label">Dirección de envio</label><input type="password"
+                  class="form-control credit-inputs" placeholder="xxxx xxxx xx"></div>
+              <div class="col-md-6"><label class="credit-card-label">Fecha</label><input type="text"
+                  class="form-control credit-inputs" placeholder="xxx"></div>
+            </div>
+
+            <!--CALCULOS FINALES-->
+            <hr class="line">
+            <div class="d-flex justify-content-between information"><span>Subtotal</span>
+              <h6 id="subtotal">UYU20.000</h6>
+            </div>
+            <div class="d-flex justify-content-between information"><span>Cantidad de productos</span>
+              <h5 id="cantidad_productos_carrito"></h5>
+            </div>
+            <div class="d-flex justify-content-between information"><span>Metodo de pago</span>
+              <h5 id="descuento_metodo">-15%</h5>
+            </div>
+            <div class="btn-group dropup">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Tipo de envío
+              </button><span></span></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <h5 id="valor_envio">-</h5>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#!" onclick="envio1();">📍Pick up / 2 dias habiles / GRATIS</a>
+                <a class="dropdown-item" href="#!" onclick="envio2();">🚚 Envío express / 72 hs / UYU120</a>
+                <a class="dropdown-item" href="#!" onclick="envio3();">💨Envío en el día/ Recibé hoy / UYU180</a>
+
+              </div>
+
+            </div>
+
+            <br><br>
+
+
+            <div class="d-flex justify-content-between information"><span>Total</span>
+              <h4 class="total_final" id="valor_total">UYU40.000</h4>
+            </div><button class="btn btn-primary btn-block justify-content-between mt-3"
+              type="button"><span>Checkout</span><span><i class="fa fa-long-arrow-right ml-1"></i></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </main>
+  <!-- FOOTER GENERAL DE LA PAGINA EMERCADO -->
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2021</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+
 </body>
 
 </html>
+
+
+

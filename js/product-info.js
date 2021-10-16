@@ -300,7 +300,6 @@ function mostrarRelacionados(relatedProducts) {
             let contenedor = document.getElementById("relacionados");
 
             for (let i = 0; i < indiceArray.length; i++) {
-                console.log('hola');
                 let indiceActual = indiceArray[i]
                 let productos_relacionados = productos[indiceActual]
                 let nombre = productos_relacionados.name

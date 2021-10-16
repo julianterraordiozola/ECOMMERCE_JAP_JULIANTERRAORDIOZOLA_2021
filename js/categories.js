@@ -45,7 +45,7 @@ function sortCategories(criteria, array) {
 
     return result;
 }
-
+//FUNCION QUE ME PERMITE MOSTRAR LAS CATEGORIAS EN INSERTARLAS EN EL HTML
 function showCategoriesList() {
 
     let htmlContentToAppend = "";

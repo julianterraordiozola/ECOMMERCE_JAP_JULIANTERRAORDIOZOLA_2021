@@ -84,18 +84,18 @@
         </div>
         <div class="col-md-4">
           <div class="payment-info">
-            <div class="d-flex justify-content-between align-items-center"><span>Finalizacion de la compra</span></div>
+            <div class="d-flex justify-content-between align-items-center"><span>Finalización de la compra</span></div>
 
             <!--CHEKOUT-->
             <!-- METÓDO DE PAGO -->
             <span class="type d-block mt-3 mb-1">Metódo de pago</span><label class="radio"> <input type="radio"
-                name="card" value="payment" id="metodo_1" checked> <span><img width="30"
+                name="card" value="payment" id="metodo_1" onclick="pago1();" checked> <span><img width="30"
                   src="https://img.icons8.com/color/48/000000/mastercard.png" /></span> </label>
-            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_2"> <span><img width="30"
+            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_2" onclick="pago2();"> <span><img width="30"
                   src="https://img.icons8.com/officel/48/000000/visa.png" /></span> </label>
-            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_3"> <span><img width="30"
+            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_3" onclick="pago3();"> <span><img width="30"
                   src="https://img.icons8.com/ultraviolet/48/000000/amex.png" /></span> </label>
-            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_4"> <span><img width="30"
+            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_4" onclick="pago4();"> <span><img width="30"
                   src="https://img.icons8.com/officel/48/000000/paypal.png" /></span> </label>
 
             <!--DATOS CLIENTE-->
@@ -104,10 +104,10 @@
             <div><label class="credit-card-label">Dirección de correo electrónico</label><input type="email"
                 class="form-control credit-inputs" placeholder="xxxxx@xxxx"></div>
             <div class="row">
-              <div class="col-md-6"><label class="credit-card-label">Dirección de envio</label><input type="password"
+              <div class="col-md-6"><label class="credit-card-label">Dirección de envio</label><input type="text"
                   class="form-control credit-inputs" placeholder="xxxx xxxx xx"></div>
-              <div class="col-md-6"><label class="credit-card-label">Fecha</label><input type="text"
-                  class="form-control credit-inputs" placeholder="xxx"></div>
+              <div class="col-md-6"><label class="credit-card-label">Ciudad / Localidad</label><input type="text"
+                  class="form-control credit-inputs" placeholder="xxxx / xxxx "></div>
             </div>
 
             <!--CALCULOS FINALES-->
@@ -118,26 +118,24 @@
             <div class="d-flex justify-content-between information"><span>Cantidad de productos</span>
               <h5 id="cantidad_productos_carrito"></h5>
             </div>
-            <div class="d-flex justify-content-between information"><span>Metodo de pago</span>
-              <h5 id="descuento_metodo">-15%</h5>
+            <div class="d-flex justify-content-between information"><span>Descuento</span>
+              <h5 id="descuento_metodo">-</h5>
             </div>
             <div class="btn-group dropup">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+                aria-haspopup="true" aria-expanded="false" id="boton_envio">
                 Tipo de envío
               </button><span></span></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               <h5 id="valor_envio">-</h5>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#!" onclick="envio1();">📍Pick up / 2 dias habiles / GRATIS</a>
                 <a class="dropdown-item" href="#!" onclick="envio2();">🚚 Envío express / 72 hs / UYU120</a>
-                <a class="dropdown-item" href="#!" onclick="envio3();">💨Envío en el día/ Recibé hoy / UYU180</a>
+                <a class="dropdown-item" href="#!" onclick="envio3();">💨Envío en el día/ Recibé hoy / UYU170</a>
 
               </div>
-
             </div>
 
             <br><br>
-
 
             <div class="d-flex justify-content-between information"><span>Total</span>
               <h4 class="total_final" id="valor_total">UYU40.000</h4>
@@ -168,6 +166,7 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+
 
 </body>
 

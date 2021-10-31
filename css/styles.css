@@ -456,5 +456,14 @@ label.radio input:checked+span {
   margin-right: 0.25cm; 
 }
 
+#contenedor_form{
+  justify-content: center;
+}
 
+#avatar_perfil {
 
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-left: 40%;
+}

@@ -26,7 +26,7 @@ function mostrarCarrito() {
 			class="fa fa-trash-o ml-3 text-black-50"></i></div>
 		<div class="col-2" width="40">
 		  <div class="row-4">
-			<input type="number" id="inputCount" class="form-control"  onchange="calcularTotal();" placeholder="" required="" value="${article.count}" min="0" onclick="mostrarCantidadProductos();">
+			<input type="number" id="inputCount" class="form-control inputCount" data-count="${article.count}" onchange="calcularTotal();" placeholder="" required="" value="${article.count}" min="0" onclick="mostrarCantidadProductos();">
 			<span><button class="btn btn-alert borrar" id="boton_borrar"  onclick="eraseText();">🗑️</button></span>
 		  </div>
 		</div>
@@ -102,12 +102,16 @@ function mostrarSubtotal() {
 
 //MUESTRO LA CANTIDAD DE PRODUCTOS
 function mostrarCantidadProductos() {
+let cantidades_productos = document.getElementsByClassName("inputCount");
+suma = 0;
 
-	let htmlContentToAppend = "";
+for (let i = 0; i < cantidades_productos.length; i++) {
 
-	htmlContentToAppend += `${document.getElementById("inputCount").value}`
+	
+	suma += parseFloat(cantidades_productos[i].dataset.count);
+}
 
-	document.getElementById("cantidad_productos_carrito").innerHTML = htmlContentToAppend;
+	document.getElementById("cantidad_productos_carrito").innerHTML = suma;
 
 }
 

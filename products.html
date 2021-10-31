@@ -17,8 +17,8 @@
 </head>
 
 <body>
+  
   <!--BARRA DE NAVEGACIÓN-->
-
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -51,12 +51,12 @@
           <h2>Productos destacados</h2>
         </div>
       </section>
+
       <!--CLASIFICADORES DE -->
       <div class="container">
         <div class="row">
 
           <!-- BUSCADOR DE ARTICULO  POR TEXTO -->
-                    
           <nav class="navbar navbar-light bg-light">
             <form class="form-inline">
               <div><input type="text" id="myInput" onkeyup="myFunction()" placeholder="🔎Buscar..."
@@ -73,14 +73,7 @@
               <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
 
 
-                <!--Botones de orden por nombre-->
-                <!--<label class="btn btn-light active" id="sortAsc">
-                    <input type="radio" name="options" autocomplete="off" checked>A-Z
-                  </label>
-                  <label class="btn btn-light" id="sortDesc">
-                    <input type="radio" name="options" autocomplete="off">Z-A
-                  </label>-->
-
+                <!--BOTONES DE ORDEN PARA PRODUCTOS-->
                 <label class="btn btn-light" id="sortAsc">
                   <input type="radio" name="options" autocomplete="off">🔼$
                 </label>
@@ -105,10 +98,12 @@
                 <p class="font-weight-normal text-right my-2">Cant.</p>
               </div>
               <div class="col">
-                <input class="form-control" type="number" step="1000" placeholder="$ Min. &nbsp&nbsp" id="rangeFilterCountMin">
+                <input class="form-control" type="number" step="1000" placeholder="$ Min. &nbsp&nbsp"
+                  id="rangeFilterCountMin">
               </div>
               <div class="col">
-                <input class="form-control" type="number" step="1000" placeholder="$ Máx. &nbsp&nbsp" id="rangeFilterCountMax">
+                <input class="form-control" type="number" step="1000" placeholder="$ Máx. &nbsp&nbsp"
+                  id="rangeFilterCountMax">
               </div>
               <div class="col-3 p-0">
                 <div class="btn-group" role="group">
@@ -166,7 +161,7 @@
     </div>
     </div>
   </main>
-  
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p class="float-right">

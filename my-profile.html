@@ -43,27 +43,88 @@
       <div class="main-header__right-side">
         <a class="py-2 d-none d-md-inline-block" href="cart.html">🛒</a>
 
-        
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="barra_usuario" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <a class="barra_usuario" id="mi_perfil" href="my-profile.html">&nbsp&nbsp Mi perfil</a><br>
-            <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">&nbsp&nbsp Cerrar sesión</a>
-          </div>
-        
+
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="barra_usuario" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <a class="barra_usuario" id="mi_perfil" href="my-profile.html">&nbsp&nbsp Mi perfil</a><br>
+          <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">&nbsp&nbsp Cerrar
+            sesión</a>
+        </div>
+
       </div>
     </div>
   </nav>
 
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main" class="pb-5">
+    <div class="text-center p-3">
+      <h2>Mi perfil👤</h2>
+      <p class="lead">Aquí esta tu informarción, si algun dato no es correcto podes modificarlo.</p>
     </div>
+
+    <div class="container" id="imagen_perfil">
+      <div class="row">
+        <div class="col-12">
+          <img src="img/avatarInicial.png" id="avatar_perfil" alt="...">
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row" id="contenedor_form">
+        <div class="col-sm-8">
+
+          <label for="formGroupExampleInput">Nombre y apellidos</label>
+          <div class="input-group"><br>
+            <input type="text" class="form-control formulario_datos" id="nombre" placeholder="xxxxx xxxx xxxx"
+              aria-label="" aria-describedby="basic-addon1">
+            <div class="input-group-append">
+            </div>
+          </div>
+          <br>
+          <label for="formGroupExampleInput">Dirección de email</label>
+          <div class="input-group">
+            <input type="email" class="form-control formulario_datos" id="email" placeholder="xxxx@xxxx" aria-label=""
+              aria-describedby="basic-addon1">
+            <div class="input-group-append">
+            </div>
+          </div>
+          <br>
+          <label for="formGroupExampleInput">Edad</label>
+          <div class="input-group">
+            <input type="number" class="form-control formulario_datos" id="edad" placeholder="xx" aria-label=""
+              aria-describedby="basic-addon1">
+            <div class="input-group-append">
+            </div>
+          </div>
+          <br>
+          <label for="formGroupExampleInput">Teléfono</label>
+          <div class="input-group">
+            <input type="text" class="form-control formulario_datos" id="telefono" placeholder="xxx xxx xxx"
+              aria-label="" aria-describedby="basic-addon1">
+            <div class="input-group-append">
+            </div>
+          </div><br>
+
+
+          <label for="formGroupExampleInput2">Subí tu foto de perfil</label>
+          <input type="file" class="form-control-file" id="agregar_foto" onchange="mostrarImagenPerfil()"><br>
+          <div id="imgTest"></div><br>
+          <button type="submit" class="btn btn-primary" onclick=guardar_miperfil()>Guardar perfil</button>
+        </div>
+        </form>
+      </div>
+
+    </div>
+
+
+
+
+  </main>
+
+
   </div>
   <footer class="text-muted bg-light">
     <div class="container">

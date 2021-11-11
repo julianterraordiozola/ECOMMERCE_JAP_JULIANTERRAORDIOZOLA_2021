@@ -58,7 +58,7 @@ function cerrar_sesion() {
   location.replace('login.html');
 
   var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut()
+  auth2.signOut();
  }
 
 function mostrar_usuario() {

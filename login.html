@@ -17,13 +17,13 @@
 
   <!-- VOY A LINKEAR EL HTML CON EL JS -->
   <!-- Google api -->
-  <meta name="google-site-verification" content="6fiqeoNA7TeBbgG_GwVHM0y7Qm7mJ2_3zksOVvuHh1c" />
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id"
-    content="873252683614-mq5lan1lv6jv4751t6lph77uem7vs3ea.apps.googleusercontent.com">
 
+  <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="873252683614-20vi52eqgjn8u3d6h9p2f8ik6dovil4q.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  
 </head>
-<!-- Google api -->
+
 
 <style>
   html,
@@ -82,10 +82,8 @@
       </form>
 
       <div class="row">
-        
-        <!--Boton de google-->
-        <div class="botonGoogle" id="my-signin2"></div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
+        <!--Boton de Google-->
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
         <!--Boton de FAcebook-->
         <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with"
           data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
@@ -94,12 +92,6 @@
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
   </div>
  
-
-  <!--SCRIPT de google-->
-
-
-
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
   <!--SCRIPT PARA LOGIN CON FACEBOOK-->
   <script>

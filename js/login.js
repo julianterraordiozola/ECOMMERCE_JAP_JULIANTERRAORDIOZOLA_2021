@@ -31,4 +31,3 @@ location.replace('index.html');
 
 
 
-

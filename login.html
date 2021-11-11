@@ -99,8 +99,8 @@
     function onSuccess(googleUser) {
       console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
     
-      sessionStorage.setItem('Email') === googleUser;
-    location.replace('index.html');
+      sessionStorage.setItem('Email') === googleUser.getBasicProfile().getName();
+      location.replace('index.html');
     }
 
     function onFailure(error) {

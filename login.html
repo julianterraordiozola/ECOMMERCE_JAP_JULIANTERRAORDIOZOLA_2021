@@ -99,6 +99,7 @@
     function onSuccess(googleUser) {
       console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
     
+      sessionStorage.setItem('Email') === getname();
     location.replace('index.html');
     }
 

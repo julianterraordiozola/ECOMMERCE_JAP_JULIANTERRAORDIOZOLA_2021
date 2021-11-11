@@ -26,15 +26,16 @@
       <div class="main-header__right-side">
         <a class="py-2 d-none d-md-inline-block" href="cart.html">🛒</a>
 
-        
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="barra_usuario" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <a class="barra_usuario" id="mi_perfil" href="my-profile.html">&nbsp&nbsp Mi perfil</a><br>
-            <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">&nbsp&nbsp Cerrar sesión</a>
-          </div>
+
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="barra_usuario" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <a class="barra_usuario" id="mi_perfil" href="my-profile.html">&nbsp&nbsp Mi perfil</a><br>
+          <a class="py-1 d-none d-md-inline-block" href="login.html" onclick="cerrar_sesion()">&nbsp&nbsp Cerrar
+            sesión</a>
+        </div>
 
       </div>
     </div>
@@ -136,6 +137,8 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
+    <div class="g-signin2 mt-3" style="display: none;"></div>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
   </span>
 
 </body>

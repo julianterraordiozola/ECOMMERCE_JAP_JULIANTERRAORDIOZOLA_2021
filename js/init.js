@@ -55,7 +55,6 @@ if (sessionStorage.getItem('Email') === null) {
 function cerrar_sesion() {
   sessionStorage.removeItem('Email');
   localStorage.clear();  
-   
   cerrar_sesion_google();
  }
 

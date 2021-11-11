@@ -55,10 +55,16 @@ if (sessionStorage.getItem('Email') === null) {
 function cerrar_sesion() {
   sessionStorage.removeItem('Email');
   localStorage.clear();  
+   
+  cerrar_sesion_google();
+ }
+
+
+function cerrar_sesion_google() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut();
-  location.replace('login.html');  
- }
+  location.replace('login.html');
+}
 
 function mostrar_usuario() {
 

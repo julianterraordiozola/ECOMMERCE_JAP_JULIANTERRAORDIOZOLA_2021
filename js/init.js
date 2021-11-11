@@ -54,11 +54,10 @@ if (sessionStorage.getItem('Email') === null) {
 //Funcion asociada a boton de cerrar_sesion / removiendo los objetos de SessionStorage en la misma ventana del Navegador y redirigiendo a Login//
 function cerrar_sesion() {
   sessionStorage.removeItem('Email');
-  localStorage.clear();
-  location.replace('login.html');
-
+  localStorage.clear();  
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut();
+  location.replace('login.html');  
  }
 
 function mostrar_usuario() {

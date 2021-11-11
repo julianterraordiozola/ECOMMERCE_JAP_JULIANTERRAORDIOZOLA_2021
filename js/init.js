@@ -69,6 +69,7 @@ function mostrar_usuario() {
 }
 
 
+
 //Lista de eventos a ejecutar//
 document.addEventListener("DOMContentLoaded", function(e) {
     mostrar_usuario();

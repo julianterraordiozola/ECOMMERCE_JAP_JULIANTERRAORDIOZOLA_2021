@@ -57,7 +57,9 @@ function cerrar_sesion() {
   localStorage.clear();
   location.replace('login.html');
 
-}
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut()
+ }
 
 function mostrar_usuario() {
 
@@ -67,7 +69,6 @@ function mostrar_usuario() {
   
   document.getElementById("barra_usuario").innerHTML = htmlContentToAppend;
 }
-
 
 
 //Lista de eventos a ejecutar//

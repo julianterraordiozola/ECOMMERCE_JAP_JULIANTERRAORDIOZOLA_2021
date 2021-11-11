@@ -14,7 +14,7 @@ function ingresar_index() {
 function onSignIn(googleUser) {
   // Useful data for your client-side scripts:
   var profile = googleUser.getBasicProfile();
-sessionStorage.setItem("Email", profile.getEmail());
+sessionStorage.setItem("Email", profile.getName());
 location.replace('index.html');
 
   console.log("ID: " + profile.getId()); // Don't send this directly to your server!

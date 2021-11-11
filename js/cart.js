@@ -2,14 +2,18 @@ let divisaUY = "UYU"
 let envio = document.getElementsByClassName("envio_valor").value;
 var envio_valor2 = parseInt(envio);
 
+
+
+
 //FUNCION QUE MUESTRA EL CARRITO
 function mostrarCarrito() {
 
 	let htmlToAppend = "";
 	
-	let i = 0;
+let i=0;
 
 	for (let article of productosCarrito) {
+		
 
 		htmlToAppend += `
 
@@ -26,21 +30,21 @@ function mostrarCarrito() {
 			class="fa fa-trash-o ml-3 text-black-50"></i></div>
 		<div class="col-2" width="40">
 		  <div class="row-4">
-			<input type="number" id="inputCount" class="form-control inputCount" data-count="${article.count}" onchange="calcularTotal();" placeholder="" required="" value="${article.count}" min="0" onclick="mostrarCantidadProductos();">
-			<span><button class="btn btn-alert borrar" id="boton_borrar"  onclick="eraseText();">🗑️</button></span>
+			<input type="number" id="inputCount" class="form-control"  onchange="monto_parcial(${i},this.value);" placeholder="" required="" value="${article.count}" min="0">
+			<span><button class="btn btn-alert borrar" id="boton_borrar" onclick="eraseText();">🗑️</button></span>
 		  </div>
 		</div>
 
 	  </div>
 		
         `
-i++;
-
+		i++;
 	}
 	document.getElementById("contenedor_productos").innerHTML = htmlToAppend;
  
 
 }
+
 
 //FUNCION QUE LLAMA AL CARRITO
 function obtenerCarrito(url) {
@@ -51,67 +55,68 @@ function obtenerCarrito(url) {
 		})
 }
 
+/*
 //PRUEBA_BORRAR EL PRODUCTO DEL CARRITO
 function eraseText() {
-	document.getElementById("inputCount").value = 0;
+	inputCount = 0;
 	calcularTotal();
 
 }
  //FUNCION PARA RESETEAR BOTON DE ENVIO
 
-
+} */
 
 //CALCULO MONTO PARCIAL PRODUCTO
-function monto_parcial() {
+function monto_parcial(productoID, value) {
+	
+productosCarrito[productoID].count = value
+console.log(productoID);
+mostrarCarrito();
 
-
-	let precio_unitario3 = document.getElementById("precio_unitario").textContent;
-	let cantidad_productos3 = document.getElementById("inputCount").value;
-
-
-	let htmlContentToAppend3 = "";
-
-	htmlContentToAppend3 += `` + precio_unitario3 * cantidad_productos3 + ``
-
-
-	document.getElementById("monto_parcial").innerHTML = htmlContentToAppend3;
 
 }
 
 
 
 //MUESTRO SUBTOTAL
-function mostrarSubtotal() {
-
-	let precio_unitario4 = document.getElementById("precio_unitario").textContent;
-	let cantidad_productos4 = document.getElementById("inputCount").value;
-
-
+function mostrarSubtotal(productoID, valor) {       
+	
+	productosCarrito[productoID].count = valor
+				    
 	let htmlContentToAppend = "";
 
-	htmlContentToAppend += `` + divisaUY + precio_unitario4 * cantidad_productos4 + ``
-
+	htmlContentToAppend += `` + sum + ``
 
 	document.getElementById("subtotal").innerHTML = htmlContentToAppend;
 
 
-
 }
 
 
+//EVENTOS DEL DOM
+document.addEventListener("DOMContentLoaded", function (e) {
+	obtenerCarrito(CART_INFO_URL)
+		.then(respuesta => {
+			productosCarrito = respuesta.articles;
+			mostrarCarrito();
+			// mostrarSubtotal();
+			/*mostrarCantidadProductos();			 
+			calcularTotal();
+			monto_parcial(); */
 
+
+		})
+}) 
+
+/*
 //MUESTRO LA CANTIDAD DE PRODUCTOS
 function mostrarCantidadProductos() {
-let cantidades_productos = document.getElementsByClassName("inputCount");
-suma = 0;
 
-for (let i = 0; i < cantidades_productos.length; i++) {
+	let htmlContentToAppend = "";
 
-	
-	suma += parseFloat(cantidades_productos[i].dataset.count);
-}
+	htmlContentToAppend += inputCount
 
-	document.getElementById("cantidad_productos_carrito").innerHTML = suma;
+	document.getElementById("cantidad_productos_carrito").innerHTML = htmlContentToAppend;
 
 }
 
@@ -120,9 +125,7 @@ for (let i = 0; i < cantidades_productos.length; i++) {
 function calcularTotal(x=0) {
 
 
-	let precio_unitario2 = document.getElementById("precio_unitario").textContent;
-	let cantidad_productos2 = document.getElementById("inputCount").value;
-	let PrecioSinEnvio = precio_unitario2 * cantidad_productos2;
+	let PrecioSinEnvio = precio_unitario * inputCount;
 	let precioTotal = PrecioSinEnvio + x;
 
 	
@@ -141,7 +144,6 @@ function calcularTotal(x=0) {
 
 
  
-
 
 //FUNCIONES DE DESCUENTOS POR METODO ENVIO
 function envio1() {
@@ -235,18 +237,4 @@ function pago4() {
 }
 
 
-
-//EVENTOS DEL DOM
-document.addEventListener("DOMContentLoaded", function (e) {
-	obtenerCarrito(CART_INFO_URL)
-		.then(respuesta => {
-			productosCarrito = respuesta.articles;
-			mostrarCarrito();
-			mostrarCantidadProductos();
-			mostrarSubtotal();
-			calcularTotal();
-			monto_parcial();
-
-
-		})
-})
+*/

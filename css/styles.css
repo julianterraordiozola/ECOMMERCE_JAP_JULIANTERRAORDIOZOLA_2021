@@ -451,9 +451,10 @@ label.radio input:checked+span {
 
 .envio_valor{
   position: absolute;
-  left: 280px;
-  flex: auto;
-  margin-right: 0.25cm; 
+  justify-content: center;
+  left: 80%;
+  width: 60%;
+
 }
 
 #contenedor_form{
@@ -467,3 +468,11 @@ label.radio input:checked+span {
   height: 200px;
   margin-left: 40%;
 }
+
+#msg_finalizarcompra {
+  color: rgb(250, 190, 240);
+  text-shadow: 4px 4px 5px rgb(211, 233, 16);
+  font-size: 10x;
+
+}
+

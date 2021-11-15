@@ -19,7 +19,7 @@
 
 <body>
 
-  <!-- NAV SUPERIOR GENERAL DE TODAS LAS PAGINAS  -->
+
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -76,7 +76,7 @@
             <div class="p-2 flex-fill bg-secondary" id="montos_parciales">Montos parciales</div>
             <div class="p-2 flex-fill bg-secondary" id="cantidad_productos">Cantidad</div>
           </div>
-          
+
           <!-- CONTENEDOR PARA INSERTAR LOS PRODUCTOS -->
           <div class="container" id="contenedor_productos"></div>
 
@@ -85,73 +85,146 @@
         <div class="col-md-4">
           <div class="payment-info">
             <div class="d-flex justify-content-between align-items-center"><span>Finalización de la compra</span></div>
-
-            <!--CHEKOUT-->
-            <!-- METÓDO DE PAGO -->
-            <span class="type d-block mt-3 mb-1">Metódo de pago</span><label class="radio"> <input type="radio"
-                name="card" value="payment" id="metodo_1" onclick="pago1();" checked> <span><img width="30"
-                  src="https://img.icons8.com/color/48/000000/mastercard.png" /></span> </label>
-            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_2" onclick="pago2();"> <span><img width="30"
-                  src="https://img.icons8.com/officel/48/000000/visa.png" /></span> </label>
-            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_3" onclick="pago3();"> <span><img width="30"
-                  src="https://img.icons8.com/ultraviolet/48/000000/amex.png" /></span> </label>
-            <label class="radio"> <input type="radio" name="card" value="payment" id="metodo_4" onclick="pago4();"> <span><img width="30"
-                  src="https://img.icons8.com/officel/48/000000/paypal.png" /></span> </label>
-
-            <!--DATOS CLIENTE-->
-            <div><label class="credit-card-label">Titular de la compra</label><input type="text"
-                class="form-control credit-inputs" placeholder="xxxxx xxxxx xxxxx"></div>
-            <div><label class="credit-card-label">Dirección de correo electrónico</label><input type="email"
-                class="form-control credit-inputs" placeholder="xxxxx@xxxx"></div>
-            <div class="row">
-              <div class="col-md-6"><label class="credit-card-label">Dirección de envio</label><input type="text"
-                  class="form-control credit-inputs" placeholder="xxxx xxxx xx"></div>
-              <div class="col-md-6"><label class="credit-card-label">Ciudad / Localidad</label><input type="text"
-                  class="form-control credit-inputs" placeholder="xxxx / xxxx "></div>
-            </div>
-
-            <!--CALCULOS FINALES-->
-            <hr class="line">
-            <div class="d-flex justify-content-between information"><span>Subtotal</span>
-              <h6 id="subtotal">UYU20.000</h6>
-            </div>
-            <div class="d-flex justify-content-between information"><span>Cantidad de productos</span>
-              <h5 id="cantidad_productos_carrito"></h5>
-            </div>
-            <div class="d-flex justify-content-between information"><span>Descuento</span>
-              <h5 id="descuento_metodo">-</h5>
-            </div>
-            <div class="btn-group dropup">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" id="boton_envio">
-                Tipo de envío
-              </button><span></span></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <h5 id="valor_envio">-</h5>
+            
+            <form class="form-signin" onsubmit="return false">
               
-              
-              <!--BOTON DESPLEGABLE PARA ENVIOS-->
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#!" onclick="envio1();">📍Pick up / 2 dias habiles / GRATIS</a>
-                <a class="dropdown-item" href="#!" onclick="envio2();">🚚 Envío express / 72 hs / UYU120</a>
-                <a class="dropdown-item" href="#!" onclick="envio3();">💨Envío en el día/ Recibé hoy / UYU170</a>
+              <!--CHEKOUT-->
+              <!-- METÓDO DE PAGO -->
+              <span class="type d-block mt-3 mb-1">Metódo de pago</span><label class="radio"><input type="radio"
+                  name="card" value="payment" onclick="pago1();" id="metodo_1" data-toggle="modal" data-target="#exampleModal"
+                   required="required"><span><img width="30"
+                    src="https://img.icons8.com/color/48/000000/mastercard.png" /></span> </label>
+              <label class="radio"> <input type="radio" name="card" value="payment" onclick="pago2();" id="metodo_2" data-toggle="modal"
+                  data-target="#exampleModal">
+                <span><img width="30" src="https://img.icons8.com/officel/48/000000/visa.png" /></span> </label>
+              <label class="radio"> <input type="radio" name="card" value="payment" onclick="pago3();" id="metodo_3" data-toggle="modal"
+                  data-target="#exampleModal">
+                <span><img width="30" src="https://img.icons8.com/ultraviolet/48/000000/amex.png" /></span> </label>
+              <label class="radio"> <input type="radio" name="card" value="payment" onclick="pago4();" id="metodo_4" data-toggle="modal"
+                  data-target="#exampleModal">
+                <span><img width="30" src="https://img.icons8.com/officel/48/000000/paypal.png" /></span> </label>
 
+              <!--DATOS CLIENTE-->
+              <div><label class="credit-card-label">Titular de la compra</label><input type="text"
+                  class="form-control credit-inputs" placeholder="xxxxx xxxxx xxxxx"  required></div>
+              <div><label class="credit-card-label">Dirección de correo electrónico</label><input type="email"
+                  class="form-control credit-inputs" placeholder="xxxxx@xxxx" required></div>
+              <div class="row">
+                <div class="col-md-6"><label class="credit-card-label">Dirección de envio</label><input type="text"
+                    class="form-control credit-inputs" placeholder="xxxx xxxx xx" required></div>
+                <div class="col-md-6"><label class="credit-card-label">Ciudad / Localidad</label><input type="text"
+                    class="form-control credit-inputs" placeholder="xxxx / xxxx " required></div>
               </div>
-            </div>
 
-            <br><br>
-             
-            <!--CALCULO DEL TOTAL-->
-            <div class="d-flex justify-content-between information"><span>Total</span>
-              <h4 class="total_final" id="valor_total">UYU 0.000</h4>
-            </div><button class="btn btn-primary btn-block justify-content-between mt-3"
-              type="button"><span>Checkout</span><span><i class="fa fa-long-arrow-right ml-1"></i></span></button>
+              <!--CALCULOS FINALES-->
+              <hr class="line">
+              <div class="d-flex justify-content-between information"><span>Subtotal</span>
+                <h6 id="subtotal">UYU20.000</h6>
+              </div>
+              <div class="d-flex justify-content-between information"><span>Cantidad de productos</span>
+                <h5 id="cantidad_productos_carrito"></h5>
+              </div>
+              <div class="d-flex justify-content-between information"><span>Descuento</span>
+                <h5 id="descuento_metodo">-</h5>
+              </div>
+              <div class="btn-group dropup">
+                <button  class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false" id="boton_envio">
+                  Tipo de envío
+                </button><span></span></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <h5 id="valor_envio">-</h5>
+
+
+                <!--BOTON DESPLEGABLE PARA ENVIOS-->
+                <div class="dropdown-menu" >
+                  <a class="dropdown-item" href="#!" onclick="calcularEnvio(0);">📍Pick up / 2 dias habiles / GRATIS</a>
+                  <a class="dropdown-item" href="#!" onclick="calcularEnvio(0.05);">🚚 Envío normal / 72 hs / 5%</a>
+                  <a class="dropdown-item" href="#!" onclick="calcularEnvio(0.07);">💨 Envío rápido/ Recibé mañana / 7%</a>
+                  <a class="dropdown-item" href="#!" onclick="calcularEnvio(0.15);">🚀 Envío en el día/ Recibé hoy / 15%</a>
+
+                </div>
+              </div>
+
+              <br><br>
+
+              <!--CALCULO DEL TOTAL-->
+              <div class="d-flex justify-content-between information"><span>Total</span>
+                <h4 class="total_final" id="valor_total"></h4>
+              </div>
+              <button class="btn btn-primary btn-block justify-content-between mt-3"
+                type="submit"><span>Checkout</span><span><i class="fa fa-long-arrow-right ml-1"></i></span></button>
+            </form>
+
+
           </div>
         </div>
       </div>
     </div>
     <br>
+
+
+    <!-- Modal -->
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">PAGAR CON TARJETA </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form onsubmit="return false" class="form-signin">
+            <div class="modal-body">
+
+              <div class="form-group">
+                <label for="formGroupExampleInput">👤 Nombre completo</label>
+                <input type="text" class="form-control" type="submit" id="formGroupExampleInput"
+                  placeholder="xxxxx xxxxxx" required>
+              </div>
+              <div>
+                <label for="formGroupExampleInput2">💳 Numero de tarjeta </label>
+                <input type="cc-number" class="form-control" type="submit" id="formGroupExampleInput2"
+                  placeholder="···· ···· ···· ····" maxlength="19" required>
+              </div><br>
+
+              <div class="row">
+                <div class="col-8">
+                  <span>
+                    <label for="formGroupExampleInput2">📅 Fecha de Expiración</label>
+                    <input type="month" class="form-control" type="submit" id="formGroupExampleInput2"
+                      placeholder="xx/xxxx" min="2021-11" required>
+                  </span>
+                </div>
+
+                <div class="col-4">
+                  <span>
+                    <label for="formGroupExampleInput2">⭕CVV</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="xxx" maxlength="3"
+                      required>
+                  </span>
+                </div>
+              </div>
+
+              <br>
+              <h6 class="coitainer" id="msg_finalizarcompra"> Estas a punto de finalizar tu compra!! Despues de
+                ingresar
+                tus datos de pago, seleccioná el metodo de envio.</h6>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="btn btn-primary" >Guardar cambios</button>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
   </main>
-  
+
   <!-- FOOTER GENERAL DE LA PAGINA EMERCADO -->
   <footer class="text-muted bg-light">
     <div class="container">
@@ -175,6 +248,3 @@
 </body>
 
 </html>
-
-
-
